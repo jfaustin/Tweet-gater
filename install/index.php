@@ -175,7 +175,7 @@ try {
 <br />
 <h1>You should be all set now!</h1>
 You can configure these changes by modifying the config.ini file in the /config folder.<br /><br />
-<a href="<?php echo Tweetgater_Twitter::getBaseUrl(); ?>"><h1>Visit Your Site</h1></a>
+<h1><a href="<?php echo Tweetgater_Twitter::getBaseUrl(); ?>">Visit Your Site</a></h1>
 <br /><br /><br />
 
 </body>
