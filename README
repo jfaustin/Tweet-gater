@@ -1,9 +1,42 @@
-http://twitter.ncsu.edu
+This code was originally created by the Outreach Technology group at NC State
+University (http://ot.ncsu.edu) in coordination with Web Communications at
+NC State.
 
-NC State University
- * Outreach Technology (http://ot.ncsu.edu)
- * Web Communications (http://www.ncsu.edu)
- * Contact twitter@ncsu.edu for additional assistance.
+For issues, please use github's issue tracker.
+
+
+
+Notes
+
+*  This code is based on Zend Framework version 1.10.6.  All applicable licenses to Zend
+   Framework still apply.
+   
+*  While not required, we would prefer that you state where the code used to create 
+   your site came from.  Our contact information is at the top of this document.
+   
+
+Installation
+
+*  Extract the download into a web accessible directory on your webserver
+
+*  Bring up your web browser and go to http://[wherever-you-installed-this-at]/install
+   
+*  The install script will take you the rest of the way through.
+   
+*  3 main pages are provied
+   - index.php:  Shows all the tweets for the account you setup
+   - orgs.php:   Shows all the accounts you are following
+   - feed.php:   Provides an RSS feed of all the tweets for the account you setup
+   
+
+Known Issues
+
+*  On some systems running PHP 5.3+ there seems to be a delay on writing information to the 
+   config.php file.  The information will get written on the first request, but the installer
+   sometimes does not recognize this.  It typically takes 3-5 seconds to it to realize the
+   necessary actions have been taken.  A simple refresh of the installer page will make the 
+   installer kick in.
+
 
 
 The contents of this package are released under the following license:
@@ -40,35 +73,3 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =================================================
 
-Notes
-
-*  This code is based on Zend Framework version 1.10.6.  All applicable licenses to Zend
-   Framework still apply.
-   
-*  While not required, we would prefer that you state where the code used to create 
-   your site came from.  Our contact information is at the top of this document.
-   
-
-Installation
-
-*  Extract the download into a web accessible directory on your webserver
-
-*  Bring up your web browser and go to http://[wherever-you-installed-this-at]/install
-   
-*  The install script will take you the rest of the way through.
-   
-*  3 main pages are provied
-   - index.php:  Shows all the tweets for the account you setup
-   - orgs.php:   Shows all the accounts you are following
-   - feed.php:   Provides an RSS feed of all the tweets for the account you setup
-   
-
-Known Issues
-
-*  On some systems running PHP 5.3+ there seems to be a delay on writing information to the 
-   config.php file.  The information will get written on the first request, but the installer
-   sometimes does not recognize this.  It typically takes 3-5 seconds to it to realize the
-   necessary actions have been taken.  A simple refresh of the installer page will make the 
-   installer kick in.
-
-Any additional questions should be sent to twitter@ncsu.edu.
