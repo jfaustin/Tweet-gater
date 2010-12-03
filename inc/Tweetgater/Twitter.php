@@ -3,7 +3,7 @@
 set_include_path(realpath(dirname(__FILE__) . '/../'));
 
 /**
- * Does all interaction with the twitter API for the NCSU twitter page
+ * Does all interaction with the twitter API for the controller layer
  * 
  * @author jfaustin
  *
@@ -11,7 +11,7 @@ set_include_path(realpath(dirname(__FILE__) . '/../'));
 class Tweetgater_Twitter
 {
     protected $_configFilePath = '';
-    
+        
 	/**
 	 * Sets up autoloader
 	 */
@@ -193,6 +193,52 @@ class Tweetgater_Twitter
         
         return $data;
     }	
+    
+    /**
+     * Interacts with the TwitPic service to gather pics from the 
+     * registered twitter account.
+     * 
+     * @param int $quantity max number of pics to return
+     * @throws Exception on CURL error
+     * @return $data array of twitpic photo IDs
+     * @author Aaron Hill armahillo@gmail.com / amhill.net
+     */
+    public function getTwitPicImages($quantity = 10)
+    {
+        $twitter = $this->_initTwitter();
+		$cache = $this->_initCache();
+		
+		$data = array();
+		
+	    try {
+	        // Get the twitter account
+			$me = $twitter->account->verifyCredentials();
+			$user = (string)$me->name;
+
+            // RegEx to extract the photos from the twitpic data
+            $searchForPhotos = '<a href="/(\w+)">';
+             
+            $ch = curl_init('http://www.twitpic.com/photos/' . $user);             
+            //return the transfer as a string
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            $result = curl_exec($ch);
+            
+            curl_close($ch);
+             
+            preg_match_all($searchForPhotos, $result, $data);
+            array_shift($data);
+            $data = array_slice($data[0], 0, $quantity);			
+			
+			$cache->save($data, 'twitpic');
+			
+	    } catch (Exception $e) {
+	    	if (!$data = $cache->load('twitpic')) {
+	    		throw $e;
+	    	}
+	    }
+	
+        return $data;
+    }
 	
 	protected function _initTwitter()
 	{

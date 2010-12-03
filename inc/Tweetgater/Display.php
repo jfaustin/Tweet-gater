@@ -5,7 +5,7 @@ set_include_path(realpath(dirname(__FILE__) . '/../'));
 require_once 'Tweetgater/Twitter.php';
 
 /**
- * Does all interaction with the twitter API for the NCSU twitter page
+ * Does all interaction with the twitter API for the display layer
  * 
  * @author jfaustin
  *
@@ -14,12 +14,12 @@ class Tweetgater_Display
 {
     public static function timeline($page = 1)
     {
-        $ncsu = new Tweetgater_Twitter();
+        $tweetgater = new Tweetgater_Twitter();
         
         $error = '';
         
         try {
-            $timeline = $ncsu->getTimeline($page);
+            $timeline = $tweetgater->getTimeline($page);
         } catch (Exception $e) {
             $error = $e->getMessage();
         }
@@ -56,11 +56,11 @@ class Tweetgater_Display
     public static function accounts()
     {
 
-        $ncsu = new Tweetgater_Twitter();
+        $tweetgater = new Tweetgater_Twitter();
         
         $error = '';
         try {
-            $friends = $ncsu->getFriends();
+            $friends = $tweetgater->getFriends();
         } catch (Exception $e) {
             $error = $e->getMessage();
         }
@@ -94,16 +94,16 @@ class Tweetgater_Display
     
     public static function feed()
     {
-        $ncsu = new Tweetgater_Twitter();
+        $tweetgater = new Tweetgater_Twitter();
         
         $down = false;
         try {
-            $timeline = $ncsu->getTimeline();
+            $timeline = $tweetgater->getTimeline();
         } catch (Exception $e) {
             $down = true;
         }
         
-        $config = $ncsu->getConfigFile();
+        $config = $tweetgater->getConfigFile();
         
         $fa = array();
         
@@ -137,4 +137,43 @@ class Tweetgater_Display
         // send http headers and dump the feed
         $rssFeed->send();        
     }
+    
+    public static function twitpic($quantity = 5, $style = 'mini')
+    {
+        $style = (!in_array($style, array('mini', 'thumb', 'large'))) ? 'mini' : $style;
+        
+        $styleOptions = array(
+            'mini'  => 'http://twitpic.com/show/mini/%1$s',
+            'thumb' => 'http://twitpic.com/show/thumb/%1$s',
+            'large' => 'http://twitpic.com/show/large/%1$s',
+        );
+       
+        $tweetgater = new Tweetgater_Twitter();
+        
+        $error = '';
+        try {
+            $twitpic = $tweetgater->getTwitPicImages($quantity);
+        } catch (Exception $e) {
+            $error = $e->getMessage();
+        }
+        
+        $ret = '';
+        
+        if ($error == '') {
+            $ret = '<ul>';
+            foreach ($twitpic as $t) {
+                $ret .= '<li>'
+                     . '<a href="' . sprintf('http://twitpic.com/%1$s', $t) . '" title="Twitpic">'
+                     . '<img src="' . sprintf($styleOptions[$style], $t) . '" alt="twitpic" class="thumb" />'
+                     . '</a>'
+                     . '</li>'
+                     ; 
+            }
+            $ret .= '</ul>';
+            
+            return $ret;
+        }
+
+        return $error;
+    }    
 }
