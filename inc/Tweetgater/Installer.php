@@ -84,7 +84,7 @@ class Tweetgater_Installer
     public function verifyOptions()
     {
         $config = Tweetgater_Twitter::getConfigFile();
-        
+
         if ($config->site->url == '' || $config->feed->title == '' || $config->feed->author == '') {
             return false;
         }
@@ -102,7 +102,10 @@ class Tweetgater_Installer
         
         $writer = new Zend_Config_Writer_Array(array('config' => $config, 'filename' => Tweetgater_Twitter::getConfigFilePath()));
         
-        $writer->write();
+        $writer->write(null);
+        
+        // Kinda hackish, but this ensures that concurrency problems from the file write don't show up
+        sleep(5);
     }
     
     public function getProbableUrl()
@@ -150,6 +153,9 @@ class Tweetgater_Installer
         $writer = new Zend_Config_Writer_Array(array('config' => $config, 'filename' => Tweetgater_Twitter::getConfigFilePath()));
         
         $writer->write();
+        
+        // Kinda hackish, but this ensures that concurrency problems from the file write don't show up
+        sleep(5);
     }
     
     public function writeOauthToken($token, $tokenSecret)
@@ -162,6 +168,9 @@ class Tweetgater_Installer
         $writer = new Zend_Config_Writer_Array(array('config' => $config, 'filename' => Tweetgater_Twitter::getConfigFilePath()));
         
         $writer->write();
+        
+        // Kinda hackish, but this ensures that concurrency problems from the file write don't show up
+        sleep(5);
     }    
     
 }

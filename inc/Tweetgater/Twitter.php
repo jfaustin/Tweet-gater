@@ -34,7 +34,7 @@ class Tweetgater_Twitter
         if ($editable) {
             $options = array('skipExtends' => true, 'allowModifications' => true);
         }
-        
+
         if (is_file(self::getConfigFilePath())) {
             return new Zend_Config(require self::getConfigFilePath(), $options);
         }
@@ -145,6 +145,54 @@ class Tweetgater_Twitter
 	
 		return $data;				
 	}
+	
+    /**
+     * Search Twitter
+     *
+     * @param $terms = Search terms
+     * @param $page = integer of the page of the timeline to request
+     * @author Aaron Hill
+     * @email armahillo@gmail.com
+     * @return array
+     */
+    public function search($terms, $page = 1)
+    {
+        $twitter = $this->_initTwitter();
+        $cache = $this->_initCache();
+        $resultsPerPage = 40;
+        
+        $data = array();
+        try {
+            $search = new Zend_Service_Twitter_Search();
+            $timeline = $search->search($terms, array('page' => $page, 'since_id' => 1520639490, 'rpp' => $resultsPerPage));                         
+
+            foreach ($timeline['results'] as $t) {
+                $data[] = array(
+                    'id'                      => (string)$t['id'],
+                    'user-profile_image_url'  => (string)$t['profile_image_url'],
+                    'user-name'               => (string)$t['from_user'],
+                    'user-screen_name'        => (string)$t['from_user'],
+                    'text'                    => $this->_processTweet((string)$t['text']),
+                    'created_at'              => (string)$t['created_at'],
+                    'elapsed_time'            => $this->_elapsedTime(strtotime($t['created_at'])),
+                    'source'                  => html_entity_decode($t['source']),
+                    'in_reply_to_screen_name' => '',
+                    'in_reply_to_status_id'   => ''
+                );                            
+            }   
+
+            if ($page == 1) {
+                $cache->save($data, 'search');
+            }
+            
+        } catch (Exception $e) {
+            if ($page != 1 || !$data = $cache->load('search')) {
+                throw $e;
+            }
+        }
+        
+        return $data;
+    }	
 	
 	protected function _initTwitter()
 	{
