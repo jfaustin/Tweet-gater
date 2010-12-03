@@ -149,11 +149,10 @@ class Tweetgater_Twitter
     /**
      * Search Twitter
      *
-     * @param $terms = Search terms
-     * @param $page = integer of the page of the timeline to request
-     * @author Aaron Hill
-     * @email armahillo@gmail.com
-     * @return array
+     * @param string $terms Search terms
+     * @param int $page Page of the timeline to request
+     * @return $data array of tweets found from search
+     * @author Aaron Hill armahillo@gmail.com / amhill.net
      */
     public function search($terms, $page = 1)
     {

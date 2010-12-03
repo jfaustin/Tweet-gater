@@ -23,17 +23,18 @@ Installation
    
 *  The install script will take you the rest of the way through.
    
-*  4 main pages are provied
+*  5 main pages are provied
    - index.php:    Shows all the tweets for the account you setup
    - orgs.php:     Shows all the accounts you are following
    - feed.php:     Provides an RSS feed of all the tweets for the account you setup
    - twitpic.php:  Shows a set of twitpics for the registered user
+   - search.php:   Shows all tweets matching the search criteria
    
 
 Additional Contributions
 
 *  TwitPic integration was contributed by Aaron Hill (armahillo AT gmail DOT com / amhill.net)
-
+*  Search integration was contriubted by Aaron Hill (armahillo AT gmail DOT com / amhill.net)
 
 Known Issues
 

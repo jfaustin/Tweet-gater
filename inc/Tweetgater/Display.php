@@ -196,5 +196,53 @@ class Tweetgater_Display
         }
 
         return $error;
-    }    
+    }  
+
+    /**
+     * Display search results
+     *
+     * @param string $terms Search terms
+     * @param int $page integer of the page of the timeline to request
+     * @return $ret HTML of search results
+     */
+    public static function search($terms, $page = 1) 
+    {
+        $tweetgater = new Tweetgater_Twitter();
+                       
+        $error = '';
+        
+        try {    
+            $searchResults = $tweetgater->search($terms, $page);
+        } catch (Exception $e) {
+            $error = $e->getMessage();
+        }
+        
+        $ret = '';
+        if ($error == '') {
+            foreach ($searchResults as $t) {
+                $ret .= '<div class="tweet">'
+                     . '    <div class="avatar">'
+                     . '        <img src="' . $t['user-profile_image_url'] . '" alt="' . $t['user-name'] . '" width="48" height="48" />'
+                     . '    </div>'
+                     . '    <div class="text">'
+                     . '        <a class="username" href="http://twitter.com/' . $t['user-screen_name'] . '">' . $t['user-screen_name'] . '</a> ' . $t['text']
+                     . '    </div>'
+                     . '    <div class="origination"> ' . $t['elapsed_time'] . ' from ' . $t['source']
+                     . (($t['in_reply_to_screen_name'] != '') ? ' <a class="user" href="http://www.twitter.com/' . $t['in_reply_to_screen_name'] . '/status/' . $t['in_reply_to_status_id'] . '">in reply to ' . $t['in_reply_to_screen_name'] . '</a>' : '')
+                     . '    </div>'
+                     . '    <div style="clear:both;"></div>'
+                     . '</div>'
+                     ;
+            }
+            
+            $ret .= '<br /><br />'
+                 . '<a class="twitterButton" href="search.php?page=' . ($page + 1) . '">More...</a>'
+                 ;    
+
+            return $ret;
+        }
+        
+        return $error;    
+    }
+     
 }
