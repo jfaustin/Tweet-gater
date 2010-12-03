@@ -12,6 +12,12 @@ require_once 'Tweetgater/Twitter.php';
  */
 class Tweetgater_Display
 {
+    /**
+     * Displayes the timeline for the registered user
+     * 
+     * @param int $page Page of tweets to display
+     * @return string HTML of the tweets
+     */
     public static function timeline($page = 1)
     {
         $tweetgater = new Tweetgater_Twitter();
@@ -53,9 +59,13 @@ class Tweetgater_Display
         return $ret;
     }	
     
+    /**
+     * Displays list of accounts for the registered user
+     * 
+     * @return $ret HTML of the accounts
+     */
     public static function accounts()
     {
-
         $tweetgater = new Tweetgater_Twitter();
         
         $error = '';
@@ -92,6 +102,11 @@ class Tweetgater_Display
         return $ret;
     }
     
+    /**
+     * Displays valid RSS feed of the tweets for the registered user
+     * 
+     * @return nothing, prints feed to stdout
+     */
     public static function feed()
     {
         $tweetgater = new Tweetgater_Twitter();
@@ -138,6 +153,12 @@ class Tweetgater_Display
         $rssFeed->send();        
     }
     
+    /**
+     * Returns the twitpics of size and quantity for registered user
+     * 
+     * @param string $quantity Number of pics to show
+     * @param string(mini|thumb|large) $style Style of pics to show
+     */
     public static function twitpic($quantity = 5, $style = 'mini')
     {
         $style = (!in_array($style, array('mini', 'thumb', 'large'))) ? 'mini' : $style;

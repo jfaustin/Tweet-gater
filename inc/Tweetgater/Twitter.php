@@ -240,6 +240,12 @@ class Tweetgater_Twitter
         return $data;
     }
 	
+    /**
+     * Initializes the Zend_Service_Twitter object with the
+     * desited OAuth specs
+     * 
+     * return Zend_Service_Twitter object
+     */
 	protected function _initTwitter()
 	{
 	    $oauthConfig = $this->getConfigFile();
@@ -257,6 +263,7 @@ class Tweetgater_Twitter
                 
         return new Zend_Service_Twitter($config);
 	}
+	
 	/**
 	 * Initializes the cache
 	 * 
