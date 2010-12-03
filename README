@@ -23,15 +23,21 @@ Installation
    
 *  The install script will take you the rest of the way through.
    
-*  3 main pages are provied
-   - index.php:  Shows all the tweets for the account you setup
-   - orgs.php:   Shows all the accounts you are following
-   - feed.php:   Provides an RSS feed of all the tweets for the account you setup
+*  4 main pages are provied
+   - index.php:    Shows all the tweets for the account you setup
+   - orgs.php:     Shows all the accounts you are following
+   - feed.php:     Provides an RSS feed of all the tweets for the account you setup
+   - twitpic.php:  Shows a set of twitpics for the registered user
    
+
+Additional Contributions
+
+*  TwitPic integration was contributed by Aaron Hill (armahillo AT gmail DOT com / amhill.net)
+
 
 Known Issues
 
-*  On some systems running PHP 5.3+ there seems to be a delay on writing information to the 
+*  **FIXED** On some systems running PHP 5.3+ there seems to be a delay on writing information to the 
    config.php file.  The information will get written on the first request, but the installer
    sometimes does not recognize this.  It typically takes 3-5 seconds to it to realize the
    necessary actions have been taken.  A simple refresh of the installer page will make the 
