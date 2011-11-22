@@ -46,11 +46,14 @@ class Tweetgater_Display
                      . '    </div>'
                      . '    <div style="clear:both;"></div>'
                      . '</div>'
+					 . '<div class="wrap">'
+					 . '	<div class="shadow"></div>'
+					 . '</div>'
                      ;
             }
             
-            $ret .= '<br /><br />'
-                 . '<a class="twitterButton" href="index.php?page=' . ($page + 1) . '">More...</a>'
+            $ret .= '<br />'
+                 . '<a class="moreButton" href="index.php?page=' . ($page + 1) . '">More...</a>'
                  ;
         } else {
             $ret = $error;
@@ -78,14 +81,14 @@ class Tweetgater_Display
         $ret = '';
         
         if ($error == '') {
-            $ret = '<h2 class="tweetHeader">' . count($friends) . ' Organizations are Tweeting</h2>';
+            $ret = '<h2 class="tweetHeader" style="margin-top:20px;">' . count($friends) . ' Organizations are Tweeting</h2>';
             
             $i = 0; 
             foreach ($friends as $f) {
                 $ret .= '<div class="tweet friend ' . (($i % 2 == 0) ? 'row1' : 'row2') . '">'
                      . '    <div class="avatar"><img src="' . $f['profile_image_url'] . '" alt="' . $f['name'] . '" width="48" height="48" /></div>'
                      . '    <div class="text">'
-                     . '        <span class="name">' . $f['name'] . '</span><br />'
+                     . '        <span class="name"><strong>' . $f['name'] . '</strong></span><br />'
                      . (($f['description'] != '') ? $f['description'] . '<br />' : '')
                      . '        <a class="follow" href="http://twitter.com/' . $f['screen_name'] . '">Follow @' . $f['screen_name'] . '</a>'
                      . '    </div>'
@@ -208,7 +211,7 @@ class Tweetgater_Display
     public static function search($terms, $page = 1) 
     {
         $tweetgater = new Tweetgater_Twitter();
-                       
+        $badWords = array('fuck', 'bitch', 'shit');
         $error = '';
         
         try {    
@@ -219,7 +222,17 @@ class Tweetgater_Display
         
         $ret = '';
         if ($error == '') {
-            foreach ($searchResults as $t) {
+			foreach ($searchResults as $t) {
+				
+				/* Bad words filter */
+				foreach ($badWords as $check) {
+					$curse = substr_count(strtolower($t['text']), $check);
+					if ($curse) {
+						continue 2;
+					}
+				}
+					
+				
                 $ret .= '<div class="tweet">'
                      . '    <div class="avatar">'
                      . '        <img src="' . $t['user-profile_image_url'] . '" alt="' . $t['user-name'] . '" width="48" height="48" />'
@@ -232,13 +245,16 @@ class Tweetgater_Display
                      . '    </div>'
                      . '    <div style="clear:both;"></div>'
                      . '</div>'
+                     . '<div class="wrap">'
+					 . '	<div class="shadow"></div>'
+					 . '</div>'
                      ;
             }
             
             $ret .= '<br /><br />'
-                 . '<a class="twitterButton" href="search.php?page=' . ($page + 1) . '">More...</a>'
+                 //. '<a class="moreButton" href="search.php?page=' . ($page + 1) . '">More...</a>'
                  ;    
-
+				 
             return $ret;
         }
         
