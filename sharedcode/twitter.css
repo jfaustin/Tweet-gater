@@ -4,10 +4,6 @@
 	height:0;
 }
 
-.nav_unpinned #wdn_content_wrapper {
-    margin-top: 22px;
-}
-
 a.tooltip {
 	display:block;
 }
@@ -40,6 +36,12 @@ a.moreButton:hover {
     text-decoration:none;
 }
 
+.tweetHeader {
+	border-bottom: #DDD 2px dashed;
+	margin:0px 25px 18px 25px;
+	padding-bottom: 0;
+}
+
 .boxheader {
 	background-color:#efefef;
 	background-image:url(../images/twitter_header.jpg);
@@ -49,21 +51,20 @@ a.moreButton:hover {
 	height:220px;
 	margin-bottom:60px;
 	margin-top:30px;
-	overflow:hidden;
 	width:984px;
 }
 
 .boxheader .blurb {
 	float:right;
 	font-size:1.2em;
-	height:190px;
 	line-height:28px;
-	padding:15px 40px;
+	margin-top: -45px;
 	text-align:right;
-	width:340px;	
+	width:485px;	
 }
 
 #maincontent .boxheader .blurb h3 {
+	float:left;
 	font-family: Helvetica,Arial,sans-serif;
 	font-size: 2em;
 	font-weight: bold;
@@ -76,6 +77,9 @@ a.moreButton:hover {
 
 .boxheader .blurb p {
 	color:#666;
+	float:right;
+	padding-left: 100px;
+	padding-right:25px;
 }
 
 .bubble {
@@ -86,7 +90,7 @@ a.moreButton:hover {
 
 #maincontent {
 	background-color:#B70302;
-	margin:-93px -12px 0;
+	margin:-55px -12px 0;
 	width:984px;
 	z-index:0;
 	
@@ -236,18 +240,6 @@ a.moreButton:hover {
 	background-position:0 0;
 }
 
-#titlegraphic
-h1 {
-	margin-left:6px;
-	padding-right:12px;
-	padding-top:10px;
-}
-
-/* #titlegraphic
-h1 a {
-	text-decoration: none;
-	color: #fff;
-} /*
 
 /* These are for index.php */
 
@@ -290,6 +282,36 @@ h1 a {
 	font-size:1em;
 }
 
+.tweetBox {
+	background-color:#fff;
+	border:1.5px solid #e6e6e6;
+	left:85px;
+	margin-bottom:30px;
+	position:relative;
+	width:506px;
+	
+	/* HTML5 */
+	border-radius: 8px;
+	-khtml-border-radius: 8px; 
+	-moz-border-radius: 8px; 
+	-webkit-border-radius: 8px;
+}
+
+.tweetBox .shadow {
+	bottom:30px;
+	height:10px;
+	position:relative;
+	right:520px;
+	width:540px;
+	
+	/* HTML5 */
+	box-shadow: 0px 7px 6px -2px rgba(0, 0, 0, .3);	
+	-khtml-box-shadow: 0px 7px 6px -2px rgba(0, 0, 0, .3);
+	-moz-box-shadow: 0px 7px 6px -2px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: 0px 7px 6px -2px rgba(0, 0, 0, .3);
+	
+}
+
 /* These are for orgs.php */
 
 .tweet.friend {
@@ -324,69 +346,32 @@ h1 a {
 
 /* * * * * * * * * * * */
 
-.tweetBox {
-	background-color:#fff;
-	border:1.5px solid #e6e6e6;
-	left:85px;
-	margin-bottom:30px;
-	position:relative;
-	width:506px;
-	
-	/* HTML5 */
-	border-radius: 8px;
-	-khtml-border-radius: 8px; 
-	-moz-border-radius: 8px; 
-	-webkit-border-radius: 8px;
-}
-
-.tweetHeader {
-	border-bottom: #DDD 2px dashed;
-	margin:0px 25px 18px 25px;
-	padding-bottom: 0;
-}
-
-.tweetBox .shadow {
-	bottom:30px;
-	height:10px;
-	position:relative;
-	right:520px;
-	width:540px;
-	
-	/* HTML5 */
-	box-shadow: 0px 7px 6px -2px rgba(0, 0, 0, .3);	
-	-khtml-box-shadow: 0px 7px 6px -2px rgba(0, 0, 0, .3);
-	-moz-box-shadow: 0px 7px 6px -2px rgba(0, 0, 0, .3);
-	-webkit-box-shadow: 0px 7px 6px -2px rgba(0, 0, 0, .3);
-	
-}
 
 .logo_bg {
 	background-color:#B70302;
 	background-image:url(../images/logo_bg.gif);
 	background-repeat:repeat-x;
 	border:1px solid #B70302;
-	bottom:66px;
-	height: 45px;
-	left:175px;
-	padding:5px 5px;
+	bottom:2px;
+	left:760px;
+	padding:7px 5px;
 	position:relative;
-	width: 200px;
-	z-index:1;
+	width: 194px;
 	
 	/* HTML5 */
-	background: -moz-linear-gradient(#f66, #C00 10%, #B70302);
-	background: -ms-linear-gradient(#f66, #C00 10%, #B70302);
-	background: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f66),color-stop(.10, #C00),color-stop(1, #B70302));
+	background: -moz-linear-gradient(#B70302, #C00 88%, #f66);
+	background: -ms-linear-gradient(#B70302, #C00 88%, #f66);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0, #B70302),color-stop(.88, #C00),color-stop(1, #f66));
 	
-	border-radius:5px 5px 0 0;
-	-khtml-border-radius:5px 5px 0 0;
-	-moz-border-radius:5px 5px 0 0;
-	-webkit-border-radius:5px 5px 0 0;
+	border-radius:0 0 6px 6px;
+	-khtml-border-radius:0 0 6px 6px;
+	-moz-border-radius:0 0 6px 6px;
+	-webkit-border-radius:0 0 6px 6px;
 	
-	box-shadow: 0px -5px 5px -5px #AAA;
-	-khtml-box-shadow: 0px -5px 5px -5px #AAA;
-	-moz-box-shadow: 0px -5px 5px -5px #AAA;
-	-webkit-box-shadow: 0px -5px 5px -5px #AAA;
+	box-shadow: 0px 5px 5px -5px #AAA;
+	-khtml-box-shadow: 0px 5px 5px -5px #AAA;
+	-moz-box-shadow: 0px 5px 5px -5px #AAA;
+	-webkit-box-shadow: 0px 5px 5px -5px #AAA;
 }
 
 .twitter_logo {

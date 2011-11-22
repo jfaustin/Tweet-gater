@@ -57,9 +57,8 @@ require_once 'inc/Tweetgater/Display.php';
     </div>
     <div id="wdn_content_wrapper">
         <div id="titlegraphic"><!-- InstanceBeginEditable name="titlegraphic" -->
-            <h1>UNL on</h1>
-            <div class="logo_bg">
-            <a class="twitter_logo" href="http://www.twitter.com/">Twitter logo</a></div>
+            <h1>UNL on Twitter</h1>
+            
             <!-- InstanceEndEditable --></div>
         <div id="pagetitle"><!-- InstanceBeginEditable name="pagetitle" --> <!-- InstanceEndEditable --></div>
         <div id="maincontent">
@@ -67,8 +66,11 @@ require_once 'inc/Tweetgater/Display.php';
             <!-- InstanceBeginEditable name="maincontentarea" -->
            
 			<div class="boxheader">
+            <div class="logo_bg">
+            <a class="twitter_logo" href="http://www.twitter.com/">Twitter logo</a></div>
+            
             	<div class="blurb">
-            	<h3>Stay Connected</h3>
+            	<h3>Stay Connected on</h3>
                 <p>With everything going on here at UNL, why not have an easier way of knowing what's happening? Here's a collection of official UNL Twitter feeds to help keep you in the know.</p>
                 </div>
 	
