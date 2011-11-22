@@ -55,6 +55,7 @@ a.moreButton:hover {
 }
 
 .boxheader .blurb {
+	display:block;
 	float:right;
 	font-size:1.2em;
 	line-height:28px;
@@ -70,8 +71,9 @@ a.moreButton:hover {
 	font-weight: bold;
 	letter-spacing: -0.038em;
 	line-height: 1.1em;
-	margin: 0 0 18px 0;
+	margin-bottom:18px;
 	padding-bottom: 0.1em;
+	width:245px;
 	word-spacing: -0.05em;
 }
 
@@ -83,7 +85,6 @@ a.moreButton:hover {
 }
 
 .bubble {
-	display:block;
 	padding: 15px 10px 5px 10px;
 	margin: 0;
 }
