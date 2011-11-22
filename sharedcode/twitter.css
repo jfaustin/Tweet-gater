@@ -13,7 +13,7 @@ a.tooltip {
 }
 
 a.moreButton {
-	background-image: url(images/more.gif);
+	background-image: url(../images/more.gif);
 	background-repeat: repeat-x;
 	border: 1px solid #CCC;
 	border-color: #DDDD #AAA #AAA #DDD;
@@ -84,19 +84,17 @@ a.moreButton:hover {
 	margin: 0;
 }
 
-.bubble h4 {
-	font-weight:bold;
-}
-
 #maincontent {
 	background-color:#B70302;
 	margin:-93px -12px 0;
-	-webkit-box-shadow: 0px 1px 5px #AAA;
-	-moz-box-shadow: 0px 1px 5px #AAA;
-	box-shadow: 0px 1px 5px #AAA;
-	/*border-radius:5px 5px 0 0;*/
-	z-index:0;
 	width:984px;
+	z-index:0;
+	
+	/* HTML5 */
+	box-shadow: 0px 1px 5px #AAA;
+	-khtml-box-shadow: 0px 1px 5px #AAA;
+	-moz-box-shadow: 0px 1px 5px #AAA;
+	-webkit-box-shadow: 0px 1px 5px #AAA;
 }
 
 #maincontent h4 {
@@ -105,17 +103,16 @@ a.moreButton:hover {
 }
 
 #maincontent .top_link {
-	font-weight:bold;
+	bottom:26px;
 	float:right;
+	font-weight:bold;
 	padding-right:5px;
 	position:relative;
-	bottom:26px;
 }
 
 #maincontent .top_link a {
 	color:#fff;
 	text-decoration:none;
-	
 }
 
 #maincontent .top_link a span:hover {
@@ -132,10 +129,10 @@ a.moreButton:hover {
 }
 
 #maincontent ul.wdn_tabs {
+	border-bottom:none;
 	bottom: 45px;
     height: 0;
     position: relative;
-	border-bottom:none;
 }
 
 #maincontent ul.wdn_tabs li {
@@ -149,10 +146,10 @@ a.moreButton:hover {
 
 .right {
 	float:right;
-	width:260px;
+	margin-top:-15px;
 	position:absolute;
 	right:60px;	
-	margin-top:-15px;
+	width:260px;
 }
 
 .right .bubble p {
@@ -165,10 +162,10 @@ a.moreButton:hover {
 }
 
 .right .bubble ul.socialbuttons {
+	list-style-type: none;
 	margin: 0;
 	margin-left: -15px;
 	padding: 0;
-	list-style-type: none;
 }
 
 .right .bubble ul.socialbuttons li {
@@ -178,20 +175,25 @@ a.moreButton:hover {
 }
 
 .right .mini_container {
-	border-radius: 5px;
 	background-color: #F7F7F7;
 	border:1.5px solid #DDD;
+	margin-bottom: 1em;
 	margin-top:15px;
 	padding: 5px;
-	margin-bottom: 1em;
+	
+	/* HTML5 */
+	border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 }
 
 .socialbuttons a.facebook {
-	display: block;
-	width: 50px;
-	height: 50px;
 	background: url('../images/social_facebook.png') bottom;
+	display: block;
+	height: 50px;
 	text-indent: -99999px;
+	width: 50px;
 }
 
 .socialbuttons a.facebook:hover {
@@ -203,11 +205,11 @@ a.moreButton:hover {
 }
 
 .socialbuttons a.twitter {
-	display: block;
-	width: 50px;
-	height: 50px;
 	background: url('../images/social_twitter.png') bottom;
+	display: block;
+	height: 50px;
 	text-indent: -99999px;
+	width: 50px;
 }
 
 .socialbuttons a.twitter:hover {
@@ -219,11 +221,11 @@ a.moreButton:hover {
 }
 
 .socialbuttons a.youtube {
-	display: block;
-	width: 50px;
-	height: 50px;
 	background: url('../images/social_youtube.png') bottom;
+	display: block;
+	height: 50px;
 	text-indent: -99999px;
+	width: 50px;
 }
 
 .socialbuttons a.youtube:hover {
@@ -234,49 +236,44 @@ a.moreButton:hover {
 	background-position:0 0;
 }
 
-#titlegraphic h1 {
-	/*
-	background-color:#B70302;
-	background: -moz-linear-gradient(#f66, #C00 10%, #B70302);
-	background: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f66),color-stop(.10, #C00),color-stop(1, #B70302));
-	border:1px solid #B70302;
-	border-radius:5px 5px 0 0;
-	text-shadow: 0px 1px 0px #730201;
-	-webkit-box-shadow: 0px -5px 5px -5px #AAA;
-	-moz-box-shadow: 0px -5px 5px -5px #AAA;
-	box-shadow: 0px -5px 5px -5px #AAA;
-	*/
+#titlegraphic
+h1 {
 	margin-left:6px;
 	padding-right:12px;
 	padding-top:10px;
-	/*padding-bottom:10px;*/
 }
 
-/*
-#titlegraphic h1 a {
+/* #titlegraphic
+h1 a {
 	text-decoration: none;
 	color: #fff;
-}
-/*
+} /*
 
-/*These are for index.php*/
+/* These are for index.php */
+
 .tweet {
-	width:547px;
 	background-color:#efefef;
-	margin-left:-30px;
-	
 	margin-bottom:4px;
+	margin-left:-30px;
 	padding:5px;
-	border-radius: 6px 0px 0px 6px; 
+	width:547px;
+	
+	/* HTML5 */
+	border-radius: 6px 0px 0px 6px;
+	-khtml-border-radius: 6px 0px 0px 6px; 
 	-moz-border-radius: 6px 0px 0px 6px; 
 	-webkit-border-radius: 6px 0px 0px 6px;
 }
 
-.wdn_tabs_content .tweet:hover {
+.wdn_tabs_content
+.tweet:hover {
 	background-color:#fff;
-	-webkit-box-shadow: inset 0px 18px 20px -23px #c1c1c1, inset 0px -15px 20px -23px #c1c1c1;
-	-moz-box-shadow: inset 0px 18px 20px -23px #c1c1c1, inset 0px -15px 20px -23px #c1c1c1;
+	
+	/* HTML5 */
 	box-shadow: inset 0px 18px 20px -23px #c1c1c1, inset 0px -15px 20px -23px #c1c1c1;
+	-khtml-box-shadow: inset 0px 18px 20px -23px #c1c1c1, inset 0px -15px 20px -23px #c1c1c1;
+	-moz-box-shadow: inset 0px 18px 20px -23px #c1c1c1, inset 0px -15px 20px -23px #c1c1c1;
+	-webkit-box-shadow: inset 0px 18px 20px -23px #c1c1c1, inset 0px -15px 20px -23px #c1c1c1;	
 }
 
 .tweet .avatar {
@@ -285,8 +282,8 @@ a.moreButton:hover {
 }
 
 .tweet .origination {
-	font-size:0.85em;
 	color:#8c8c8c;
+	font-size:0.85em;
 }
 
 .tweet .text {
@@ -294,19 +291,23 @@ a.moreButton:hover {
 }
 
 /* These are for orgs.php */
+
 .tweet.friend {
-	width:460px;
 	margin:0 auto;
 	padding:10px 0px;
+	width:460px;
+	
+	/* HTML5 */
 	border-radius: 0; 
+	-khtml-border-radius: 0;
 	-moz-border-radius: 0; 
 	-webkit-border-radius: 0;
 }
 
 .tweet.friend.row1 {
 	background-color:#efefef;
-	border-top:1px solid #ddd;
 	border-bottom:1px solid #ddd;
+	border-top:1px solid #ddd;
 }
 
 .tweet.friend.row2 {
@@ -321,59 +322,79 @@ a.moreButton:hover {
 	margin-left: 65px;
 }
 
+/* * * * * * * * * * * */
+
 .tweetBox {
-	width:506px;
 	background-color:#fff;
 	border:1.5px solid #e6e6e6;
+	left:85px;
 	margin-bottom:30px;
-	border-radius: 8px ; 
+	position:relative;
+	width:506px;
+	
+	/* HTML5 */
+	border-radius: 8px;
+	-khtml-border-radius: 8px; 
 	-moz-border-radius: 8px; 
 	-webkit-border-radius: 8px;
-	position:relative;
-	left:85px;	
 }
 
 .tweetHeader {
-	padding-bottom: 0;
 	border-bottom: #DDD 2px dashed;
 	margin:0px 25px 18px 25px;
+	padding-bottom: 0;
 }
 
 .tweetBox .shadow {
+	bottom:30px;
 	height:10px;
-	width:540px;
-	-webkit-box-shadow: 0px 7px 6px -2px rgba(0, 0, 0, .3);
-	-moz-box-shadow: 0px 7px 6px -2px rgba(0, 0, 0, .3);
-	box-shadow: 0px 7px 6px -2px rgba(0, 0, 0, .3);
 	position:relative;
 	right:520px;
-	bottom:30px;	
+	width:540px;
+	
+	/* HTML5 */
+	box-shadow: 0px 7px 6px -2px rgba(0, 0, 0, .3);	
+	-khtml-box-shadow: 0px 7px 6px -2px rgba(0, 0, 0, .3);
+	-moz-box-shadow: 0px 7px 6px -2px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: 0px 7px 6px -2px rgba(0, 0, 0, .3);
+	
 }
 
 .logo_bg {
-	width: 200px;
-	height: 45px;
-	background: -moz-linear-gradient(#f66, #C00 10%, #B70302);
-	background: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f66),color-stop(.10, #C00),color-stop(1, #B70302));
 	background-color:#B70302;
+	background-image:url(../images/logo_bg.gif);
+	background-repeat:repeat-x;
 	border:1px solid #B70302;
-	border-radius:5px 5px 0 0;
-	box-shadow: 0px -5px 5px -5px #AAA;
-	-webkit-box-shadow: 0px -5px 5px -5px #AAA;
-	-moz-box-shadow: 0px -5px 5px -5px #AAA;
+	bottom:66px;
+	height: 45px;
+	left:175px;
 	padding:5px 5px;
 	position:relative;
-	left:175px;
-	bottom:66px;
+	width: 200px;
 	z-index:1;
-	}
+	
+	/* HTML5 */
+	background: -moz-linear-gradient(#f66, #C00 10%, #B70302);
+	background: -ms-linear-gradient(#f66, #C00 10%, #B70302);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f66),color-stop(.10, #C00),color-stop(1, #B70302));
+	
+	border-radius:5px 5px 0 0;
+	-khtml-border-radius:5px 5px 0 0;
+	-moz-border-radius:5px 5px 0 0;
+	-webkit-border-radius:5px 5px 0 0;
+	
+	box-shadow: 0px -5px 5px -5px #AAA;
+	-khtml-box-shadow: 0px -5px 5px -5px #AAA;
+	-moz-box-shadow: 0px -5px 5px -5px #AAA;
+	-webkit-box-shadow: 0px -5px 5px -5px #AAA;
+}
 
 .twitter_logo {
-	display: block;
 	background: url('../images/social_logo.png') bottom;
-	width: 194px;
+	display: block;
 	height: 38px;
 	text-indent: -99999px;	
+	width: 194px;
 }
 
 .twitter_logo:hover {
@@ -385,15 +406,11 @@ a.moreButton:hover {
 }
 
 .wrap {
-	width: 0;
-	height: 0;
-	border-top: 20px solid gray; 
-	border-right: 20px solid transparent;	
-	position:relative;
-	left:507px;
 	bottom:4px;
+	border-top: 20px solid gray;
+	border-right: 20px solid transparent;
+	height: 0;
+	left:507px;	
+	position:relative;
+	width: 0;
 }
-
-
-
-
