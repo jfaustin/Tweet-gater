@@ -59,19 +59,19 @@ a.moreButton:hover {
 	float:right;
 	font-size:1.2em;
 	line-height:28px;
-	margin-top: -45px;
+	padding-right:25px;
 	text-align:right;
 	width:485px;	
 }
 
 #maincontent .boxheader .blurb h3 {
-	float:left;
+	float:right;
 	font-family: Helvetica,Arial,sans-serif;
 	font-size: 2em;
 	font-weight: bold;
 	letter-spacing: -0.038em;
 	line-height: 1.1em;
-	margin-bottom:18px;
+	margin-bottom:3px;
 	padding-bottom: 0.1em;
 	width:245px;
 	word-spacing: -0.05em;
@@ -81,7 +81,6 @@ a.moreButton:hover {
 	color:#666;
 	float:right;
 	padding-left: 100px;
-	padding-right:25px;
 }
 
 .bubble {
@@ -277,6 +276,7 @@ a.moreButton:hover {
 .tweet .origination {
 	color:#8c8c8c;
 	font-size:0.85em;
+	margin-left:53px;
 }
 
 .tweet .text {
@@ -354,10 +354,11 @@ a.moreButton:hover {
 	background-repeat:repeat-x;
 	border:1px solid #B70302;
 	bottom:2px;
-	left:760px;
+	height:38px;
+	left:660px;
 	padding:7px 5px;
 	position:relative;
-	width: 194px;
+	width: 297px;
 	
 	/* HTML5 */
 	background: -moz-linear-gradient(#B70302, #C00 88%, #f66);
@@ -378,7 +379,9 @@ a.moreButton:hover {
 .twitter_logo {
 	background: url('../images/social_logo.png') bottom;
 	display: block;
+	float: right;
 	height: 38px;
+	margin-left:5px;
 	text-indent: -99999px;	
 	width: 194px;
 }
