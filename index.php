@@ -84,8 +84,13 @@ if (isset($_GET['page'])) {
 			<div class="boxheader">
             
             <div class="logo_bg">
-            <h3 style="color:#fff; float:left; font-size:2.2em; font-weight:bold;">UNL on</h3>
-            <a class="twitter_logo" href="http://www.twitter.com/">Twitter logo</a></div>
+            <table>
+            <tr>
+            <td><h3>UNL on</h3></td>
+            <td><a class="twitter_logo" href="http://www.twitter.com/">Twitter logo</a></td>
+            </tr>
+            </table>
+            </div>
             
             	<div class="blurb">
             	<h3>Stay Connected
@@ -107,7 +112,8 @@ if (isset($_GET['page'])) {
          	<h4 class="top_link"><a href="#orgs">&rarr; <span>Official twitter accounts</span></a></h4> 
            <ul class="wdn_tabs">
    				<li><a href="#main">Tweets</a></li>
-   				<li><a href="#search">#UNL</a></li>
+   				<li class="last"><a href="#search">#UNL</a></li>
+                <li style="visibility:hidden;"><a href="#orgs"></a></li>
 			</ul>
             <div class="wdn_tabs_content">
                 <div id="main">

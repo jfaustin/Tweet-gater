@@ -59,7 +59,7 @@ a.moreButton:hover {
 	float:right;
 	font-size:1.2em;
 	line-height:28px;
-	margin-top:12px;
+	margin-top:10px;
 	padding-right:25px;
 	text-align:right;
 	width:485px;	
@@ -360,12 +360,12 @@ a.moreButton:hover {
 	background-image:url(../images/logo_bg.gif);
 	background-repeat:repeat-x;
 	border:1px solid #B70302;
-	bottom:2px;
+	bottom:10px;
 	height:40px;
 	left:660px;
 	padding:7px 5px;
 	position:relative;
-	width: 297px;
+	width: 298px;
 	
 	/* HTML5 */
 	background: -moz-linear-gradient(#B70302, #C00 88%, #f66);
@@ -386,7 +386,6 @@ a.moreButton:hover {
 #maincontent
 .logo_bg h3 {
 	color:#fff;
-	float:left;
 	font-size:2.2em;
 	font-weight:bold;
 	
@@ -398,9 +397,9 @@ a.moreButton:hover {
 .twitter_logo {
 	background: url('../images/social_logo.png') bottom;
 	display: block;
-	float: right;
 	height: 38px;
-	margin-left:5px;
+	margin-left:8px;
+	margin-bottom:8px;
 	text-indent: -99999px;	
 	width: 194px;
 }
