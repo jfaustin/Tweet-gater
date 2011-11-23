@@ -150,6 +150,10 @@ a.moreButton:hover {
 	font-size:18px;
 }
 
+#maincontent ul.wdn_tabs li a {
+	padding: 0px 18px 0px 10px;
+}
+
 #maincontent
 .tweetBox .wdn_tabs_content {
 	margin-top:57px;
