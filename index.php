@@ -84,10 +84,12 @@ if (isset($_GET['page'])) {
 			<div class="boxheader">
             
             <div class="logo_bg">
+            <h3 style="color:#fff; float:left; font-size:2.2em; font-weight:bold;">UNL on</h3>
             <a class="twitter_logo" href="http://www.twitter.com/">Twitter logo</a></div>
             
             	<div class="blurb">
-            	<h3>Stay Connected on</h3>
+            	<h3>Stay Connected
+                </h3>
                 <p>With everything going on here at UNL, why not have an easier way of knowing what's happening? Here's a collection of official UNL Twitter feeds to help keep you in the know.</p>
                 </div>
 	
@@ -102,22 +104,21 @@ if (isset($_GET['page'])) {
            <!-- Tab Content -->
           
          <div class="tweetBox">
-         	<h4 class="top_link"><a href="orgs.php">&rarr; <span>Official twitter feeds</span></a></h4> 
+         	<h4 class="top_link"><a href="#orgs">&rarr; <span>Official twitter accounts</span></a></h4> 
            <ul class="wdn_tabs">
    				<li><a href="#main">Tweets</a></li>
    				<li><a href="#search">#UNL</a></li>
 			</ul>
             <div class="wdn_tabs_content">
                 <div id="main">
-                    <h2 class="tweetHeader">Tweets from UNL</h2> 
-                    <div style="clear:both;"></div>
     				<?php echo Tweetgater_Display::timeline($page); ?>
                 </div>
                 <div id="search">
-                    <h2 class="tweetHeader">Tweets about UNL</h2>
-					<div style="clear:both;"></div>
                     <?php echo Tweetgater_Display::search('#unl', $page); ?>
-                </div>              
+                </div> 
+                <div id="orgs">
+                    <?php echo Tweetgater_Display::accounts(); ?>
+                </div>             
             </div>
          </div>
            

@@ -33,6 +33,9 @@ class Tweetgater_Display
         $ret = '';
         
         if ($error == '') {
+			$ret .= '<h2 class="tweetHeader">Tweets from UNL</h2>' 
+                 .  '<div style="clear:both;"></div>'
+			;
             foreach ($timeline as $t) {
                 $ret .= '<div class="tweet">'
                      . '    <div class="avatar">'
@@ -81,7 +84,8 @@ class Tweetgater_Display
         $ret = '';
         
         if ($error == '') {
-            $ret = '<h2 class="tweetHeader" style="margin-top:20px;">' . count($friends) . ' Organizations are Tweeting</h2>';
+            $ret .= '<h2 class="tweetHeader">' . count($friends) . ' Organizations are Tweeting</h2>'
+				 .  '<div style="clear:both;"></div>';
             
             $i = 0; 
             foreach ($friends as $f) {
@@ -222,6 +226,9 @@ class Tweetgater_Display
         
         $ret = '';
         if ($error == '') {
+			$ret .= '<h2 class="tweetHeader">Tweets about UNL</h2>' 
+                 .  '<div style="clear:both;"></div>'
+			;
 			foreach ($searchResults as $t) {
 				
 				/* Bad words filter */
