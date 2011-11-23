@@ -150,8 +150,12 @@ a.moreButton:hover {
 	font-size:18px;
 }
 
-#maincontent ul.wdn_tabs li a {
+#maincontent ul.wdn_tabs li.last a {
 	padding: 0px 18px 0px 10px;
+}
+
+#maincontent ul.wdn_tabs li.last.selected a span {
+	margin-top:15px;
 }
 
 #maincontent
