@@ -32,17 +32,8 @@ if (isset($_GET['page'])) {
     $page = (int)$_GET['page'];
 }
 ?>
+
 <link rel="stylesheet" type="text/css" media="screen" href="sharedcode/twitter.css" />
-<style type="text/css">
-
-.tweetHeader {
-	margin-top:-32px;
-	float:left;
-	width:460px;
-}
-
-</style>
-
 <!-- InstanceEndEditable -->
 </head>
 <body class="fixed">
@@ -59,7 +50,7 @@ if (isset($_GET['page'])) {
             
             <ul style="visibility:hidden;">
                 <li><a href="http://www.unl.edu/" title="University of Nebraska&ndash;Lincoln">UNL</a></li>
-                <li>on Twitter</li>
+                <li>UNL on Twitter</li>
             </ul>
             
             <!-- InstanceEndEditable --></div>
@@ -73,8 +64,6 @@ if (isset($_GET['page'])) {
         <div id="titlegraphic"><!-- InstanceBeginEditable name="titlegraphic" -->
             <h1>UNL on Twitter</h1>
             
-            
-            
             <!-- InstanceEndEditable --></div>
         <div id="pagetitle"><!-- InstanceBeginEditable name="pagetitle" --> <!-- InstanceEndEditable --></div>
         <div id="maincontent">
@@ -84,7 +73,7 @@ if (isset($_GET['page'])) {
 			<div class="boxheader">
             
             <div class="logo_bg">
-            <table>
+            <table style="margin:0 auto;">
             <tr>
             <td><h3>UNL</h3></td>
             <td style="padding-left:0.7em;"><h3>on</h3></td>
