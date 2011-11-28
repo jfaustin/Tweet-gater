@@ -86,7 +86,8 @@ if (isset($_GET['page'])) {
             <div class="logo_bg">
             <table>
             <tr>
-            <td><h3>UNL on</h3></td>
+            <td><h3>UNL</h3></td>
+            <td style="padding-left:0.7em;"><h3>on</h3></td>
             <td><a class="twitter_logo" href="http://www.twitter.com/">Twitter logo</a></td>
             </tr>
             </table>
