@@ -38,51 +38,93 @@ a.moreButton:hover {
 
 .tweetHeader {
 	border-bottom: #DDD 2px dashed;
-	margin:0px 25px 18px 25px;
+	float:left;
+	margin:-38px 25px 18px 25px;
 	padding-bottom: 0;
+	width:460px;
+}
+
+#maincontent
+.tweetHeader h2 {
+	float:left;
+	padding-bottom:7px;
+}
+
+#maincontent
+.tweetHeader a {
+	color:#999;
+	float:right;
+	font-size:1em;
+	padding-top:10px;
+}
+
+#maincontent
+.tweetHeader a:hover span {
+	text-decoration:underline;
 }
 
 .boxheader {
 	background-color:#efefef;
 	background-image:url(../images/twitter_header.jpg);
 	background-repeat:no-repeat;
-	border-top:2px solid #C2C2C2;
 	border-bottom:2px solid #9E0202;
-	height:235px;
+	height:275px;
 	margin-bottom:60px;
-	margin-top:30px;
 	width:984px;
 }
 
 .boxheader .blurb {
 	display:block;
 	float:right;
-	font-size:1.2em;
-	line-height:28px;
-	margin-top:5px;
-	padding-right:25px;
+	font-size:1.25em;
+	line-height:36px;
+	margin-right:50px;
+	margin-top:20px;
 	text-align:right;
 	width:485px;	
 }
 
 #maincontent
 .boxheader .blurb h3 {
-	float:right;
+	color: rgba(95, 95, 95, 0.8);;
+	float: right;
 	font-family: Helvetica,Arial,sans-serif;
 	font-size: 2em;
 	font-weight: bold;
 	letter-spacing: -0.038em;
 	line-height: 1.1em;
-	margin-bottom:3px;
-	padding-bottom: 0.1em;
+	padding-right:28px;
+	padding-top:54px;
 	width:245px;
 	word-spacing: -0.05em;
+	
+	/* HTML5 */
+    text-shadow: 1px 4px 6px #fff, 0 0 0 #000, 1px 4px 6px #fff;
+}
+
+/* Don't show shadows when selecting text */
+::-moz-selection { background: #5af; color: #fff; text-shadow: none; }
+::selection { background: #5af; color: #fff; text-shadow: none; }
+
+.boxheader .blurb .cloud_header {
+	background-image:url(../images/cloud.png);
+	background-repeat:no-repeat;
+	float:right;
+	height:98px;
+	left:30px;
+	margin-top:-33px;
+	position:relative;
+	width:258px;
 }
 
 .boxheader .blurb p {
-	color:#666;
+	color:#fff;
 	float:right;
 	padding-left: 100px;
+	
+	/* HTML5 */
+	text-shadow:0 1px 0 #2697bd;
+	filter: dropshadow(color=#2697bd, offx=0, offy=1); 
 }
 
 .bubble {
@@ -92,7 +134,7 @@ a.moreButton:hover {
 
 #maincontent {
 	background-color:#B70302;
-	margin:-55px -12px 0;
+	margin:-20px -12px 0;
 	width:984px;
 	z-index:0;
 	
@@ -106,25 +148,6 @@ a.moreButton:hover {
 #maincontent h4 {
 	color: #9E0202;
 	font-weight:bold;
-}
-
-#maincontent
-.top_link {
-	bottom:26px;
-	float:right;
-	font-weight:bold;
-	padding-right:5px;
-	position:relative;
-}
-
-#maincontent .top_link a {
-	color:#fff;
-	text-decoration:none;
-}
-
-#maincontent
-.top_link a span:hover {
-	text-decoration:underline;
 }
 
 #maincontent
@@ -363,36 +386,37 @@ a.moreButton:hover {
 /* * * * * * * * * * * */
 
 
-.logo_bg {
+.twitterTab {
 	background-color:#B70302;
 	background-image:url(../images/logo_bg.gif);
 	background-repeat:repeat-x;
 	border:1px solid #B70302;
 	bottom:10px;
 	height:40px;
-	left:660px;
+	left:640px;
 	padding:7px 5px;
 	position:relative;
+	top: 225px;
 	width: 298px;
 	
 	/* HTML5 */
-	background: -moz-linear-gradient(#B70302, #C00 88%, #f66);
-	background: -ms-linear-gradient(#B70302, #C00 88%, #f66);
-	background: -webkit-gradient(linear,left top,left bottom,color-stop(0, #B70302),color-stop(.88, #C00),color-stop(1, #f66));
+	background: -moz-linear-gradient(#f66, #C00 10%, #B70302);
+	background: -ms-linear-gradient(#f66, #C00 10%, #B70302);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f66),color-stop(.1, #C00),color-stop(1, #B70302));
 	
-	border-radius:0 0 6px 6px;
-	-khtml-border-radius:0 0 6px 6px;
-	-moz-border-radius:0 0 6px 6px;
-	-webkit-border-radius:0 0 6px 6px;
+	border-radius: 6px 6px 0 0;
+	-khtml-border-radius: 6px 6px 0 0;
+	-moz-border-radius: 6px 6px 0 0;
+	-webkit-border-radius: 6px 6px 0 0;
 	
-	box-shadow: 0px 5px 5px -5px #AAA;
-	-khtml-box-shadow: 0px 5px 5px -5px #AAA;
-	-moz-box-shadow: 0px 5px 5px -5px #AAA;
-	-webkit-box-shadow: 0px 5px 5px -5px #AAA;
+	box-shadow: 0px -5px 5px -5px #AAA;
+	-khtml-box-shadow: 0px -5px 5px -5px #AAA;
+	-moz-box-shadow: 0px -5px 5px -5px #AAA;
+	-webkit-box-shadow: 0px -5px 5px -5px #AAA;
 }
 
 #maincontent
-.logo_bg h3 {
+.twitterTab h3 {
 	color:#fff;
 	font-size:2.2em;
 	font-weight:bold;

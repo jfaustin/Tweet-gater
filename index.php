@@ -48,9 +48,9 @@ if (isset($_GET['page'])) {
             <!-- WDN: see glossary item 'breadcrumbs' -->
             <!-- InstanceBeginEditable name="breadcrumbs" -->
             
-            <ul style="visibility:hidden;">
+            <ul>
                 <li><a href="http://www.unl.edu/" title="University of Nebraska&ndash;Lincoln">UNL</a></li>
-                <li>UNL on Twitter</li>
+                <li>on Twitter</li>
             </ul>
             
             <!-- InstanceEndEditable --></div>
@@ -72,7 +72,17 @@ if (isset($_GET['page'])) {
            
 			<div class="boxheader">
             
-            <div class="logo_bg">
+            
+            
+            	<div class="blurb">
+                	<div class="cloud_header">
+            			<h3>Stay Connected</h3>
+                	</div>
+                <p>With everything going on here at UNL, why not have an easier way of knowing what's happening? Here's a collection of official UNL Twitter feeds to help keep you in the know.</p>
+                </div>
+                
+            <!--    
+			<div class="twitterTab">
             <table style="margin:0 auto;">
             <tr>
             <td><h3>UNL</h3></td>
@@ -81,14 +91,9 @@ if (isset($_GET['page'])) {
             </tr>
             </table>
             </div>
-            
-            	<div class="blurb">
-            	<h3>Stay Connected
-                </h3>
-                <p>With everything going on here at UNL, why not have an easier way of knowing what's happening? Here's a collection of official UNL Twitter feeds to help keep you in the know.</p>
-                </div>
-	
+            -->
            </div>
+
            
            <div class="right">
            
@@ -99,7 +104,6 @@ if (isset($_GET['page'])) {
            <!-- Tab Content -->
           
          <div class="tweetBox">
-         	<h4 class="top_link"><a href="#orgs">&rarr; <span>Official twitter accounts</span></a></h4> 
            <ul class="wdn_tabs">
    				<li><a href="#main">Tweets</a></li>
    				<li class="last"><a href="#search">#UNL</a></li>
