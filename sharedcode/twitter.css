@@ -68,6 +68,7 @@ a.moreButton:hover {
 	background-image:url(../images/twitter_header.jpg);
 	background-repeat:no-repeat;
 	border-bottom:2px solid #9E0202;
+	//border-top:2px solid #6abfe6;
 	height:275px;
 	margin-bottom:60px;
 	width:984px;
@@ -134,15 +135,15 @@ a.moreButton:hover {
 
 #maincontent {
 	background-color:#B70302;
-	margin:-20px -12px 0;
+	margin:-40px -12px 0;
 	width:984px;
 	z-index:0;
 	
 	/* HTML5 */
-	box-shadow: 0px 1px 5px #AAA;
-	-khtml-box-shadow: 0px 1px 5px #AAA;
-	-moz-box-shadow: 0px 1px 5px #AAA;
-	-webkit-box-shadow: 0px 1px 5px #AAA;
+	box-shadow: 0px 275px 5px #AAA;
+	-khtml-box-shadow: 0px 275px 5px #AAA;
+	-moz-box-shadow: 0px 275px 5px #AAA;
+	-webkit-box-shadow: 0px 275px 5px #AAA;
 }
 
 #maincontent h4 {

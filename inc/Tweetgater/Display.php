@@ -35,7 +35,7 @@ class Tweetgater_Display
         if ($error == '') {
 			$ret .= '<div class="tweetHeader">'
 				 . '<h2>Tweets from UNL Community</h2>'
-				 . '<a href="#orgs">&rarr; <span>See all accounts</span></a>' 
+				 . '<a href="#accounts">&rarr; <span>See all accounts</span></a>' 
 				 . '</div>'
                  .  '<div style="clear:both;"></div>'
 			;
@@ -88,7 +88,7 @@ class Tweetgater_Display
         $ret = '';
         
         if ($error == '') {
-            $ret .= '<h2 class="tweetHeader">' . count($friends) . ' Organizations are Tweeting</h2>'
+            $ret .= '<h2 class="tweetHeader">' . count($friends) . ' Accounts are Tweeting</h2>'
 				 .  '<div style="clear:both;"></div>';
             
             $i = 0; 
