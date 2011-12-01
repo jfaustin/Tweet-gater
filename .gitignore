@@ -4,3 +4,5 @@
 /.settings/*
 !.gitignore/.settings
 /cache
+
+templates_3.0
