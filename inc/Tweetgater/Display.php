@@ -46,7 +46,7 @@ class Tweetgater_Display
                      . '        <img src="' . $t['user-profile_image_url'] . '" alt="' . $t['user-name'] . '" width="48" height="48" /></a>'
                      . '    </div>'
                      . '    <div class="text">'
-                     . '        <a class="username" href="http://twitter.com/' . $t['user-screen_name'] . '">' . $t['user-screen_name'] . '</a> <br />' . $t['text']
+                     . '        <a class="username" href="http://twitter.com/' . $t['user-screen_name'] . '">' . $t['user-name'] . '</a> <br />' . $t['text']
                      . '    </div>'
                      . '    <div class="origination"> ' . $t['elapsed_time'] . ' from ' . $t['source']
                      . (($t['in_reply_to_screen_name'] != '') ? ' <a class="user" href="http://www.twitter.com/' . $t['in_reply_to_screen_name'] . '/status/' . $t['in_reply_to_status_id'] . '">in reply to ' . $t['in_reply_to_screen_name'] . '</a>' : '')
