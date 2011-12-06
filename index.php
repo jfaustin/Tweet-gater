@@ -76,22 +76,26 @@ if (isset($_GET['page'])) {
             
             	<div class="blurb">
                 	<div class="cloud_header">
-            			<h3>Stay Connected</h3>
+                    	<div style="overflow:hidden;">
+            			<h3>Stay Connected</h3></div>
                 	</div>
                 <p>With everything going on here at UNL, why not have an easier way of knowing what's happening? Here's a collection of official UNL Twitter feeds to help keep you in the know.</p>
                 </div>
                 
-            <!--    
+			
 			<div class="twitterTab">
-            <table style="margin:0 auto;">
-            <tr>
-            <td><h3>UNL</h3></td>
-            <td style="padding-left:0.7em;"><h3>on</h3></td>
-            <td><a class="twitter_logo" href="http://www.twitter.com/">Twitter logo</a></td>
-            </tr>
-            </table>
+                <div class="tabBox">
+                <table style="margin:0 auto;">
+                <tr>
+                <td><h3>@UNLNews on</h3></td>
+                <!--<td style="padding-left:0.7em;"><h3>on</h3></td>-->
+                <td><a class="twitter_logo" href="https://twitter.com/unlnews">Twitter logo</a></td>
+                </tr>
+                </table>
+                </div>
             </div>
-            -->
+            
+  
            </div>
 
            

@@ -46,7 +46,7 @@ class Tweetgater_Display
                      . '        <img src="' . $t['user-profile_image_url'] . '" alt="' . $t['user-name'] . '" width="48" height="48" /></a>'
                      . '    </div>'
                      . '    <div class="text">'
-                     . '        <a class="username" href="http://twitter.com/' . $t['user-screen_name'] . '">' . $t['user-name'] . '</a> <br />' . $t['text']
+                     . '        <a class="username" href="http://twitter.com/' . $t['user-screen_name'] . '"><strong>' . $t['user-name'] . '</strong></a> <br />' . $t['text']
                      . '    </div>'
                      . '    <div class="origination"> ' . $t['elapsed_time'] . ' from ' . $t['source']
                      . (($t['in_reply_to_screen_name'] != '') ? ' <a class="user" href="http://www.twitter.com/' . $t['in_reply_to_screen_name'] . '/status/' . $t['in_reply_to_status_id'] . '">in reply to ' . $t['in_reply_to_screen_name'] . '</a>' : '')
@@ -95,7 +95,7 @@ class Tweetgater_Display
             foreach ($friends as $f) {
                 $ret .= '<div class="tweet friend ' . (($i % 2 == 0) ? 'row1' : 'row2') . '">'
                      . '    <div class="avatar">'
-					 . '<img src="' . $f['profile_image_url'] . '" alt="' . $f['name'] . '" width="48" height="48" /></div>'
+					 . '<a href="http://twitter.com/' . $f['screen_name'] . '"><img src="' . $f['profile_image_url'] . '" alt="' . $f['name'] . '" width="48" height="48" /></a></div>'
                      . '    <div class="text">'
                      . '        <span class="name"><strong>' . $f['name'] . '</strong></span><br />'
                      . (($f['description'] != '') ? $f['description'] . '<br />' : '')
@@ -106,7 +106,9 @@ class Tweetgater_Display
                      ;
                      
                 $i++;
-            }         
+            }  
+			
+			$ret .= '<br />';       
         } else {
             $ret = $error;
         }
@@ -228,7 +230,7 @@ class Tweetgater_Display
         } catch (Exception $e) {
             $error = $e->getMessage();
         }
-        
+
         $ret = '';
         if ($error == '') {
 			$ret .= '<div class="tweetHeader">'
@@ -252,7 +254,7 @@ class Tweetgater_Display
                      . '        <a class="username" href="http://twitter.com/' . $t['user-screen_name'] . '">' . '<img src="' . $t['user-profile_image_url'] . '" alt="' . $t['user-name'] . '" width="48" height="48" /></a>'
                      . '    </div>'
                      . '    <div class="text">'
-                     . '        <a class="username" href="http://twitter.com/' . $t['user-screen_name'] . '">' . $t['user-name'] . '</a> ' . $t['text']
+                     . '        <a class="username" href="http://twitter.com/' . $t['user-screen_name'] . '"><strong>' . $t['user-name'] . '</strong></a> <br />' . $t['text']
                      . '    </div>'
                      . '    <div class="origination"> ' . $t['elapsed_time'] . ' from ' . $t['source']
                      . (($t['in_reply_to_screen_name'] != '') ? ' <a class="user" href="http://www.twitter.com/' . $t['in_reply_to_screen_name'] . '/status/' . $t['in_reply_to_status_id'] . '">in reply to ' . $t['in_reply_to_screen_name'] . '</a>' : '')

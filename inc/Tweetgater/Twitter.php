@@ -169,7 +169,7 @@ class Tweetgater_Twitter
                 $data[] = array(
                     'id'                      => (string)$t['id'],
                     'user-profile_image_url'  => (string)$t['profile_image_url'],
-                    'user-name'               => (string)$t['from_user'],
+                    'user-name'               => (string)$t['from_user_name'],
                     'user-screen_name'        => (string)$t['from_user'],
                     'text'                    => $this->_processTweet((string)$t['text']),
                     'created_at'              => (string)$t['created_at'],

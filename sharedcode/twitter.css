@@ -68,7 +68,6 @@ a.moreButton:hover {
 	background-image:url(../images/twitter_header.jpg);
 	background-repeat:no-repeat;
 	border-bottom:2px solid #9E0202;
-	//border-top:2px solid #6abfe6;
 	height:275px;
 	margin-bottom:60px;
 	width:984px;
@@ -138,17 +137,20 @@ a.moreButton:hover {
 	margin:-40px -12px 0;
 	width:984px;
 	z-index:0;
-	
-	/* HTML5 */
-	box-shadow: 0px 275px 5px #AAA;
-	-khtml-box-shadow: 0px 275px 5px #AAA;
-	-moz-box-shadow: 0px 275px 5px #AAA;
-	-webkit-box-shadow: 0px 275px 5px #AAA;
 }
 
 #maincontent h4 {
-	color: #9E0202;
+	color: #785917;
 	font-weight:bold;
+	padding-bottom:8px;
+	
+	/* HTML5 */
+	text-shadow: 1px 1px 0 #f2f0e4;
+	filter: dropshadow(color=#f2f0e4, offx=1, offy=1);
+}
+
+#maincontent .sec_header, #colorbox .sec_header {
+	border-bottom: #dacf94 2px solid;
 }
 
 #maincontent
@@ -196,7 +198,7 @@ a.moreButton:hover {
 }
 
 .right .bubble p {
-	color:#3e3e3e;
+	color:#594211;
 	font-size:11px;
 }
 
@@ -218,8 +220,8 @@ a.moreButton:hover {
 }
 
 .right .mini_container {
-	background-color: #F7F7F7;
-	border:1.5px solid #DDD;
+	background-color: #f2eccb;
+	border:1px solid #906B1C;
 	margin-bottom: 1em;
 	margin-top:15px;
 	padding: 5px;
@@ -283,7 +285,7 @@ a.moreButton:hover {
 /* These are for index.php */
 
 .tweet {
-	background-color:#efefef;
+	background-color:#f3f3f3;
 	margin-bottom:4px;
 	margin-left:-30px;
 	padding:5px;
@@ -341,8 +343,8 @@ a.moreButton:hover {
 	bottom:30px;
 	height:10px;
 	position:relative;
-	right:520px;
-	width:540px;
+	right:532px;
+	width:550px;
 	
 	/* HTML5 */
 	box-shadow: 0px 7px 6px -2px rgba(0, 0, 0, .3);	
@@ -386,59 +388,62 @@ a.moreButton:hover {
 
 /* * * * * * * * * * * */
 
+.tabBox {
+	bottom: 5px;
+	position: relative;
+}
 
 .twitterTab {
-	background-color:#B70302;
-	background-image:url(../images/logo_bg.gif);
-	background-repeat:repeat-x;
-	border:1px solid #B70302;
-	bottom:10px;
-	height:40px;
-	left:640px;
+	background-color:#f2eccb;
+	border-bottom: 1px solid #906b1c;
+	border-left: 1px solid #906b1c;
+	border-top: 1px solid #906b1c;
+	height:32px;
 	padding:7px 5px;
-	position:relative;
-	top: 225px;
-	width: 298px;
+	position:absolute;
+	right:0;
+	top: 250px;
+	width: 420px;
 	
-	/* HTML5 */
+	/* HTML5
 	background: -moz-linear-gradient(#f66, #C00 10%, #B70302);
 	background: -ms-linear-gradient(#f66, #C00 10%, #B70302);
 	background: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f66),color-stop(.1, #C00),color-stop(1, #B70302));
+	*/
 	
-	border-radius: 6px 6px 0 0;
-	-khtml-border-radius: 6px 6px 0 0;
-	-moz-border-radius: 6px 6px 0 0;
-	-webkit-border-radius: 6px 6px 0 0;
+	border-radius: 6px 0 0 6px;
+	-moz-border-radius: 6px 0 0 6px;
+	-webkit-border-radius: 6px 0 0 6px;
 	
-	box-shadow: 0px -5px 5px -5px #AAA;
-	-khtml-box-shadow: 0px -5px 5px -5px #AAA;
-	-moz-box-shadow: 0px -5px 5px -5px #AAA;
-	-webkit-box-shadow: 0px -5px 5px -5px #AAA;
+	box-shadow: inset 0px -8px 12px -10px rgba(0, 0, 0, 0.8);
+	-webkit-box-shadow: inset 0px -8px 12px -10px rgba(0, 0, 0, 0.8);
+	-moz-box-shadow: inset 0px -8px 12px -10px rgba(0, 0, 0, 0.8);
+
 }
 
 #maincontent
 .twitterTab h3 {
-	color:#fff;
+	color:#785917;
 	font-size:2.2em;
 	font-weight:bold;
 	
 	/* HTML5 */
-	text-shadow: 0px 1px 0px #9E0202;
-	filter: dropshadow(color=#9E0202, offx=0, offy=1);
+	text-shadow: 1px 1px 0 #F2F0E4;
+	filter: dropshadow(color=#f2f0e4, offx=1, offy=1);
 }
 
 .twitter_logo {
 	background: url('../images/social_logo.png') bottom;
 	display: block;
-	height: 38px;
+	height: 40px;
 	margin-left:8px;
 	margin-bottom:8px;
 	text-indent: -99999px;	
-	width: 194px;
+	width: 200px;
 }
 
 .twitter_logo:hover {
-	background-position:0 76px;
+	background-position:0 80px;
 }
 
 .twitter_logo:active {
