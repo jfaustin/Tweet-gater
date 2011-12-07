@@ -194,7 +194,7 @@ a.moreButton:hover {
 	float:right;
 	margin-top:-15px;
 	position:absolute;
-	right:60px;	
+	right:50px;	
 	width:278px;
 }
 
@@ -323,6 +323,7 @@ a.moreButton:hover {
 
 .tweet .text {
 	font-size:1em;
+	margin-left: 53px;
 }
 
 .tweetBox {

@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+#maincontentt {
+	margin:0 auto;
+}
+
+#maincontent
+.boxheader .blurb h3 {
+	filter: none;
+}
+
+.boxheader .blurb p {
+	filter: dropshadow(color=#2697bd, offx=0, offy=1);
+	font-weight:bold; 
+}
+
+#maincontent h4 {
+	filter: none;
+}
+
+.tweetBox .shadow {
+	filter: progid:DXImageTransform.Microsoft.dropShadow(color=#666, offX=0, offY=7, positive=true);
+}
+
+#maincontent
+.twitterTab h3 {
+	filter: none;
+}

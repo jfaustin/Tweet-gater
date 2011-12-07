@@ -35,6 +35,10 @@ if (isset($_GET['page'])) {
 
 <link rel="stylesheet" type="text/css" media="screen" href="sharedcode/twitter.css" />
 
+<!--[if lte IE 8]>
+        <link rel="stylesheet" type="text/css" media="screen" href="sharedcode/ie8-and-down.css" />
+<![endif]-->
+
 <!-- InstanceEndEditable -->
 </head>
 <body class="fixed">
