@@ -86,8 +86,7 @@ a.moreButton:hover {
 
 #maincontent
 .boxheader .blurb h3 {
-	color: rgba(95, 95, 95, 0.8);;
-	float: right;
+	color: rgb(95, 95, 95);
 	font-family: Helvetica,Arial,sans-serif;
 	font-size: 2em;
 	font-weight: bold;
@@ -95,11 +94,13 @@ a.moreButton:hover {
 	line-height: 1.1em;
 	padding-right:28px;
 	padding-top:54px;
+	text-align: center;
 	width:245px;
 	word-spacing: -0.05em;
 	
 	/* HTML5 */
-    text-shadow: 1px 4px 6px #fff, 0 0 0 #000, 1px 4px 6px #fff;
+    text-shadow: 0 1px 0 white;
+	filter: dropshadow(color=white, offx=0, offy=1);
 }
 
 /* Don't show shadows when selecting text */
@@ -194,7 +195,7 @@ a.moreButton:hover {
 	margin-top:-15px;
 	position:absolute;
 	right:60px;	
-	width:260px;
+	width:278px;
 }
 
 .right .bubble p {
@@ -209,14 +210,14 @@ a.moreButton:hover {
 .right .bubble ul.socialbuttons {
 	list-style-type: none;
 	margin: 0;
-	margin-left: -15px;
+	margin-left: -14px;
 	padding: 0;
 }
 
 .right .bubble ul.socialbuttons li {
 	display:inline;
 	float: left;
-	margin:0 10px;
+	margin:0 12px;
 }
 
 .right .mini_container {
@@ -304,9 +305,9 @@ a.moreButton:hover {
 	
 	/* HTML5 */
 	box-shadow: inset 0px 18px 20px -23px #c1c1c1, inset 0px -15px 20px -23px #c1c1c1;
-	-khtml-box-shadow: inset 0px 18px 20px -23px #c1c1c1, inset 0px -15px 20px -23px #c1c1c1;
 	-moz-box-shadow: inset 0px 18px 20px -23px #c1c1c1, inset 0px -15px 20px -23px #c1c1c1;
 	-webkit-box-shadow: inset 0px 18px 20px -23px #c1c1c1, inset 0px -15px 20px -23px #c1c1c1;	
+	
 }
 
 .tweet .avatar {
@@ -348,10 +349,9 @@ a.moreButton:hover {
 	
 	/* HTML5 */
 	box-shadow: 0px 7px 6px -2px rgba(0, 0, 0, .3);	
-	-khtml-box-shadow: 0px 7px 6px -2px rgba(0, 0, 0, .3);
 	-moz-box-shadow: 0px 7px 6px -2px rgba(0, 0, 0, .3);
 	-webkit-box-shadow: 0px 7px 6px -2px rgba(0, 0, 0, .3);
-	
+	filter: progid:DXImageTransform.Microsoft.dropShadow(color=#666, offX=0, offY=7, positive=true);
 }
 
 /* These are for orgs.php */
