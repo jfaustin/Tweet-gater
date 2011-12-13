@@ -24,6 +24,9 @@
 <title>UNL | on Twitter</title>
 <!-- InstanceEndEditable --><!-- InstanceBeginEditable name="head" -->
 <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
 <?php 
 require_once 'inc/Tweetgater/Display.php';
 $page = 1;
@@ -76,13 +79,10 @@ if (isset($_GET['page'])) {
             <!-- InstanceBeginEditable name="maincontentarea" -->
            
 			<div class="boxheader">
-            
-            
-            
-            	<div class="blurb">
-                	<div class="cloud_header">
-            			<h3>Stay Connected</h3>
-                	</div>
+                 	<div class="blurb">
+                    	<div class="cloudHeader">
+            				<h3>Stay Connected</h3>
+                        </div>
                 <p>With everything going on here at UNL, why not have an easier way of knowing what's happening? Here's a collection of official UNL Twitter feeds to help keep you in the know.</p>
                 </div>
                 

@@ -221,7 +221,7 @@ class Tweetgater_Display
      */
     public static function search($terms, $page = 1) 
     {
-        $badWords = array('fuck', 'bitch', 'shit', 'hell ');
+        $badWords = array('bitch', 'damn', 'fuck', 'hell ', 'shit');
 		$tweetgater = new Tweetgater_Twitter();
         $error = '';
         
@@ -240,7 +240,7 @@ class Tweetgater_Display
 			;
 			foreach ($searchResults as $t) {
 				
-				/* Bad words filter */
+				/* Profanity filter */
 				foreach ($badWords as $check) {
 					$curse = substr_count(strtolower($t['text']), $check);
 					if ($curse) {

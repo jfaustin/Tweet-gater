@@ -65,10 +65,10 @@ a.moreButton:hover {
 
 .boxheader {
 	background-color:#efefef;
-	background-image:url(../images/twitter_header.jpg);
+	background-image:url(../images/new_idea.jpg);
 	background-repeat:no-repeat;
-	border-bottom:2px solid #9E0202;
-	height:275px;
+	//border-bottom:2px solid #9E0202;
+	height:350px;
 	margin-bottom:60px;
 	width:984px;
 }
@@ -78,8 +78,8 @@ a.moreButton:hover {
 	float:right;
 	font-size:1.25em;
 	line-height:36px;
-	margin-right:50px;
-	margin-top:20px;
+	margin-right:48px;
+	margin-top:10px;
 	text-align:right;
 	width:485px;	
 }
@@ -88,14 +88,11 @@ a.moreButton:hover {
 .boxheader .blurb h3 {
 	color: rgb(95, 95, 95);
 	font-family: Helvetica,Arial,sans-serif;
-	font-size: 2em;
+	font-size: 2.05em;
 	font-weight: bold;
 	letter-spacing: -0.038em;
 	line-height: 1.1em;
-	padding-right:28px;
 	padding-top:54px;
-	text-align: center;
-	width:245px;
 	word-spacing: -0.05em;
 	
 	/* HTML5 */
@@ -107,15 +104,10 @@ a.moreButton:hover {
 ::-moz-selection { background: #5af; color: #fff; text-shadow: none; }
 ::selection { background: #5af; color: #fff; text-shadow: none; }
 
-.boxheader .blurb .cloud_header {
-	background-image:url(../images/cloud.png);
-	background-repeat:no-repeat;
-	float:right;
-	height:98px;
-	left:30px;
-	margin-top:-33px;
-	position:relative;
-	width:258px;
+.cloudHeader {
+	float: right;
+	width: 232px;
+	text-align: center;
 }
 
 .boxheader .blurb p {
@@ -135,7 +127,9 @@ a.moreButton:hover {
 
 #maincontent {
 	background-color:#B70302;
-	margin:-40px -12px 0;
+	background-image:url(../images/main_bg.jpg);
+	background-repeat:repeat;
+	margin:-35px -12px 0;
 	width:984px;
 	z-index:0;
 }
@@ -146,8 +140,8 @@ a.moreButton:hover {
 	padding-bottom:8px;
 	
 	/* HTML5 */
-	text-shadow: 1px 1px 0 #f2f0e4;
-	filter: dropshadow(color=#f2f0e4, offx=1, offy=1);
+	text-shadow: 1px 1px 0 white;
+	filter: dropshadow(color=white, offx=1, offy=1);
 }
 
 #maincontent .sec_header, #colorbox .sec_header {
@@ -250,20 +244,28 @@ a.moreButton:hover {
 	background-position:0 0;
 }
 
-.socialbuttons a.twitter {
-	background: url('../images/social_twitter.png') bottom;
+.socialbuttons .twitter {
+	background: url('../images/social_twitter.png'), no-repeat 0 50;
+}
+
+.socialbuttons .twitter a {
+	background: url('../images/social_twitter.png'), no-repeat 0 0;
 	display: block;
 	height: 50px;
-	text-indent: -99999px;
+	text-indent: -9999px;
 	width: 50px;
+	
+	/* CSS3 */
+	transition: opacity .6s ease-in-out;
+	-webkit-transition: opacity .6s ease-in-out, background 0s 2012s;
+	-moz-transition: opacity .6s ease-in-out, background 0s 2012s;
+	-o-transition: opacity .6s ease-in-out, background 0s 2012s;
+	-ms-transition: opacity .6s ease-in-out, background 0s 2012s;
 }
 
-.socialbuttons a.twitter:hover {
-	background-position:0 100px;
-}
-
-.socialbuttons a.twitter:active {
-	background-position:0 0;
+.socialbuttons .twitter a:hover, 
+.socialbuttons .twitter a:focus { 
+    background-position: 0 -50px; opacity: 0; 
 }
 
 .socialbuttons a.youtube {
@@ -403,7 +405,7 @@ a.moreButton:hover {
 	padding:7px 5px;
 	position:absolute;
 	right:0;
-	top: 250px;
+	top: 280px;
 	width: 420px;
 	
 	/* HTML5
@@ -429,8 +431,8 @@ a.moreButton:hover {
 	font-weight:bold;
 	
 	/* HTML5 */
-	text-shadow: 1px 1px 0 #F2F0E4;
-	filter: dropshadow(color=#f2f0e4, offx=1, offy=1);
+	text-shadow: 1px 1px 0 white; /* #F2F0E4 */
+	filter: dropshadow(color=white, offx=1, offy=1);
 }
 
 .twitter_logo {
