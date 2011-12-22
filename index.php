@@ -23,7 +23,25 @@
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>UNL | on Twitter</title>
 <!-- InstanceEndEditable --><!-- InstanceBeginEditable name="head" -->
+
+
+<meta property="og:title" content="UNL | on Twitter" />
+<meta property="og:type" content="university" />
+<meta property="og:url" content="http://ucommwiedel.unl.edu/Tweet-gater" />
+<meta property="og:image" content="http://ucommwiedel.unl.edu/Tweet-gater/images/icon.jpg"/>
+<meta property="og:site_name" content="UNL.edu" />
+<meta property="fb:admins" content="511000653" />
+<meta property="og:description"
+          content="With everything going on here at UNL, why not have an
+          easier way of knowing what's happening? Here's a collection of
+          official UNL Twitter feeds to help keep you in the know."/>
 <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+
+<link rel="stylesheet" type="text/css" media="screen" href="sharedcode/twitter.css" />
+<!--[if lte IE 8]>
+        <link rel="stylesheet" type="text/css" media="screen" href="sharedcode/ie8-and-down.css" />
+<![endif]-->
+
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
@@ -36,11 +54,9 @@ if (isset($_GET['page'])) {
 }
 ?>
 
-<link rel="stylesheet" type="text/css" media="screen" href="sharedcode/twitter.css" />
 
-<!--[if lte IE 8]>
-        <link rel="stylesheet" type="text/css" media="screen" href="sharedcode/ie8-and-down.css" />
-<![endif]-->
+
+
 
 <!-- InstanceEndEditable -->
 </head>
@@ -55,7 +71,15 @@ if (isset($_GET['page'])) {
         <div id="breadcrumbs">
             <!-- WDN: see glossary item 'breadcrumbs' -->
             <!-- InstanceBeginEditable name="breadcrumbs" -->
-            
+            <div id="fb-root"></div>
+			<script>(function(d, s, id) {
+  				var js, fjs = d.getElementsByTagName(s)[0];
+  				if (d.getElementById(id)) return;
+				js = d.createElement(s); js.id = id;
+				js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
+
             <ul>
                 <li><a href="http://www.unl.edu/" title="University of Nebraska&ndash;Lincoln">UNL</a></li>
                 <li>on Twitter</li>
@@ -78,7 +102,7 @@ if (isset($_GET['page'])) {
             <!--THIS IS THE MAIN CONTENT AREA; WDN: see glossary item 'main content area' -->
             <!-- InstanceBeginEditable name="maincontentarea" -->
            
-			<div class="boxheader">
+		<div class="boxheader">
                  	<div class="blurb">
                     	<div class="cloudHeader">
             				<h3>Stay Connected</h3>
@@ -86,30 +110,58 @@ if (isset($_GET['page'])) {
                 <p>With everything going on here at UNL, why not have an easier way of knowing what's happening? Here's a collection of official UNL Twitter feeds to help keep you in the know.</p>
                 </div>
                 
+                <div class="theTab">
+                
+                <ul class="socialbuttons">
+                    <li class="twitter">
+                    <a class="tooltip" href="https://twitter.com/#!/unlnews" title="get more news @UNLNews">Twitter</a>
+                    </li>
+                    <li class="facebook"><a class="tooltip" href="https://www.facebook.com/unl.edu?sk=wall" title="like UNL on Facebook">Facebook</a></li>
+                    <li class="youtube"><a class="tooltip" href="http://www.youtube.com/unl" title="watch our videos on YouTube">YouTube</a></li>
+                   </ul>
+                <h3 class="followUs">Follow us</h3>
+				</div>
 			
-			<div class="twitterTab">
-                <div class="tabBox">
-                <table style="margin:0 auto;">
-                <tr>
-                <td><h3>@UNLNews on</h3></td>
-                <!--<td style="padding-left:0.7em;"><h3>on</h3></td>-->
-                <td><a class="twitter_logo" href="https://twitter.com/unlnews">Twitter logo</a></td>
-                </tr>
-                </table>
-                </div>
+            <div class="share_bar">
+            <p style="float:left;">Share</p>
+			<ul class="like_bar">
+         	
+            <li>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://ucommwiedel.unl.edu/Tweet-gater" data-text="Check out the UNL twitter site!" data-via="UNLFeed">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>
+
+			<li>
+            <div class="fb-like" data-href="http://ucommwiedel.unl.edu/Tweet-gater" data-send="false" data-layout="button_count" data-width="110" data-show-faces="true" data-font="arial"></div></li>
+			
+            <li>
+			<div class="g-plusone" data-size="medium"></div>
+
+    <script type="text/javascript">
+      window.___gcfg = {
+        lang: 'en-US'
+      };
+
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+    </script></li>
+				
+            </ul>
             </div>
-            
+         
   
-           </div>
+         </div>
 
            
            <div class="right">
-           
            		<?php include 'right.html'; ?>
-
+                
+                
            </div>
            
-           <!-- Tab Content -->
+           <!-- - - - - - Tab Content - - - - - - -->
           
          <div class="tweetBox">
            <ul class="wdn_tabs">
@@ -129,9 +181,6 @@ if (isset($_GET['page'])) {
                 </div>             
             </div>
          </div>
-           
-
-             
 
            
             <!-- InstanceEndEditable -->
