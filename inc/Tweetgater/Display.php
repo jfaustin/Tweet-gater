@@ -265,7 +265,7 @@ class Tweetgater_Display
 					 . '<div class="wrap-r"></div>'
 					 
 					 //Clear space for next tweet
-					 . '<div style="margin-bottom:-50px;"></div>'
+					 . '<div style="margin-bottom:-52px;"></div>'
                      ;
             }
             
