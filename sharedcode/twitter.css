@@ -417,34 +417,42 @@ ul.socialbuttons li {
 	border-bottom: 1px solid rgb(235, 235, 235);
 	border-left: 1px solid rgb(235, 235, 235);
 	border-top: 1px solid rgb(235, 235, 235);
-	
-	margin-bottom:4px;
-	margin-left:-30px;
+	left: -21px;
 	padding:5px;
-	width:547px;
+	position: relative;
+	width:539px;
+	z-index: 100;
 	
 	/* HTML5 */
-	border-radius: 6px 0px 0px 6px;
-	-khtml-border-radius: 6px 0px 0px 6px; 
-	-moz-border-radius: 6px 0px 0px 6px; 
-	-webkit-border-radius: 6px 0px 0px 6px;
+	border-radius: 4px 4px 0px 0px;
+	-khtml-border-radius: 4px 4px 0px 0px; 
+	-moz-border-radius: 4px 4px 0px 0px; 
+	-webkit-border-radius: 4px 4px 0px 0px;
 	
+	box-shadow: 0px 1px 5px rgba(0,0,0,0.35);
+	-moz-box-shadow: 0px 1px 5px rgba(0,0,0,0.35);
+  	-khtml-box-shadow: 0px 1px 5px rgba(0,0,0,0.35);
+  	-webkit-box-shadow: 0px 1px 5px rgba(0,0,0,0.35);
+	
+	/*
 	transition: box-shadow 0.3s ease-in-out, background 0.2s ease-in-out;
 	-moz-transition: box-shadow 0.3s ease-in-out, background 0.2s ease-in-out;
 	-o-transition: box-shadow 0.3s ease-in-out, background 0.2s ease-in-out;
 	-webkit-transition: box-shadow 0.3s ease-in-out, background 0.2s ease-in-out;
+	*/
 }
 
+/*
 .wdn_tabs_content
 .tweet:hover {
 	background-color:#fff;
 	
-	/* HTML5 */
 	box-shadow: inset 0px 18px 20px -27px #c1c1c1, inset 0px -15px 20px -27px #c1c1c1;
 	-moz-box-shadow: inset 0px 18px 20px -27px #c1c1c1, inset 0px -15px 20px -27px #c1c1c1;
 	-webkit-box-shadow: inset 0px 18px 20px -27px #c1c1c1, inset 0px -15px 20px -27px #c1c1c1;	
 	
 }
+*/
 
 .tweet .avatar {
 	float:left;
@@ -460,36 +468,62 @@ ul.socialbuttons li {
 .tweet .text {
 	font-size:1em;
 	margin-left: 53px;
+	color:#444;
+	
+	/* HTML5 */
+	text-shadow: 1px 1px 0px #fff;
+	filter: dropshadow(color=#fff, offx=1, offy=1);
+}
+
+.tweetContainer {
+	left:70px;
+	margin-bottom:30px;
+	position:relative;
+	width:560px;
 }
 
 .tweetBox {
 	background-color:#fff;
-	border:1.5px solid #e6e6e6;
-	left:85px;
-	margin-bottom:30px;
-	position:relative;
-	width:506px;
+	border:1px solid #e6e6e6;
+	width:508px;
+	z-index: 90;
 	
 	/* HTML5 */
 	border-radius: 8px;
 	-khtml-border-radius: 8px; 
 	-moz-border-radius: 8px; 
 	-webkit-border-radius: 8px;
+	
+	box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+  	-khtml-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+  	-webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
 }
 
-.tweetBox .shadow {
-	bottom:30px;
-	height:10px;
-	position:relative;
-	right:532px;
-	width:550px;
-	
-	/* HTML5 */
-	box-shadow: 0px 7px 6px -2px rgba(0, 0, 0, .3);	
-	-moz-box-shadow: 0px 7px 6px -2px rgba(0, 0, 0, .3);
-	-webkit-box-shadow: 0px 7px 6px -2px rgba(0, 0, 0, .3);
-	filter: progid:DXImageTransform.Microsoft.dropShadow(color=#666, offX=0, offY=7, positive=true);
+.wrap-l {
+	border-color: transparent #B4B4B4 transparent transparent;
+	border-style:solid;
+	border-width:20px;
+	height:0px;
+	width:0px;
+	position: relative;
+	left: -41px;
+	bottom: 20px;
+	z-index: -1; /* displayed under tweetBox */
 }
+
+.wrap-r {
+	border-color: transparent transparent transparent #B4B4B4;
+	border-style:solid;
+	border-width:20px;
+	height:0px;
+	width:0px;
+	position: relative;
+	left: 509px;
+	bottom: 60px;
+	z-index: -1; /* displayed under tweetBox */
+}
+
 
 /* These are for orgs.php */
 
@@ -573,15 +607,7 @@ ul.socialbuttons li {
 	
 }
 
-.wrap {
-	bottom:4px;
-	border-top: 20px solid gray;
-	border-right: 20px solid transparent;
-	height: 0;
-	left:507px;	
-	position:relative;
-	width: 0;
-}
+
 
 #footer {
 	padding-top:22px;

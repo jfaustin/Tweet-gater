@@ -163,24 +163,26 @@ if (isset($_GET['page'])) {
            
            <!-- - - - - - Tab Content - - - - - - -->
           
-         <div class="tweetBox">
-           <ul class="wdn_tabs">
-   				<li><a href="#timeline">Tweets</a></li>
-   				<li class="last"><a href="#search">#UNL</a></li>
-                <li style="visibility:hidden;"><a href="#accounts"></a></li>
-			</ul>
-            <div class="wdn_tabs_content">
-                <div id="timeline">
-    				<?php echo Tweetgater_Display::timeline($page); ?>
+          <div class="tweetContainer">
+             <div class="tweetBox">
+               <ul class="wdn_tabs">
+                    <li><a href="#timeline">Tweets</a></li>
+                    <li class="last"><a href="#search">#UNL</a></li>
+                    <li style="visibility:hidden;"><a href="#accounts"></a></li>
+                </ul>
+                <div class="wdn_tabs_content">
+                    <div id="timeline">
+                        <?php echo Tweetgater_Display::timeline($page); ?>
+                    </div>
+                    <div id="search">
+                        <?php echo Tweetgater_Display::search('#unl', $page); ?>
+                    </div> 
+                    <div id="accounts">
+                        <?php echo Tweetgater_Display::accounts(); ?>
+                    </div>             
                 </div>
-                <div id="search">
-                    <?php echo Tweetgater_Display::search('#unl', $page); ?>
-                </div> 
-                <div id="accounts">
-                    <?php echo Tweetgater_Display::accounts(); ?>
-                </div>             
-            </div>
-         </div>
+             </div>
+          </div>
 
            
             <!-- InstanceEndEditable -->

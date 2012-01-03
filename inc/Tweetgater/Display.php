@@ -51,11 +51,12 @@ class Tweetgater_Display
                      . '    <div class="origination"> ' . $t['elapsed_time'] . ' from ' . $t['source']
                      . (($t['in_reply_to_screen_name'] != '') ? ' <a class="user" href="http://www.twitter.com/' . $t['in_reply_to_screen_name'] . '/status/' . $t['in_reply_to_status_id'] . '">in reply to ' . $t['in_reply_to_screen_name'] . '</a>' : '')
                      . '    </div>'
-                     . '    <div style="clear:both;"></div>'
                      . '</div>'
-					 . '<div class="wrap">'
-					 . '	<div class="shadow"></div>'
-					 . '</div>'
+					 . '<div class="wrap-l"></div>'
+					 . '<div class="wrap-r"></div>'
+					 
+					 //Clear space for next tweet
+					 . '<div style="margin-bottom:-50px;"></div>'
                      ;
             }
             
@@ -259,11 +260,12 @@ class Tweetgater_Display
                      . '    <div class="origination"> ' . $t['elapsed_time'] . ' from ' . $t['source']
                      . (($t['in_reply_to_screen_name'] != '') ? ' <a class="user" href="http://www.twitter.com/' . $t['in_reply_to_screen_name'] . '/status/' . $t['in_reply_to_status_id'] . '">in reply to ' . $t['in_reply_to_screen_name'] . '</a>' : '')
                      . '    </div>'
-                     . '    <div style="clear:both;"></div>'
                      . '</div>'
-                     . '<div class="wrap">'
-					 . '	<div class="shadow"></div>'
-					 . '</div>'
+					 . '<div class="wrap-l"></div>'
+					 . '<div class="wrap-r"></div>'
+					 
+					 //Clear space for next tweet
+					 . '<div style="margin-bottom:-50px;"></div>'
                      ;
             }
             
