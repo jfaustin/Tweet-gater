@@ -193,8 +193,9 @@ a.moreButton:hover {
 .boxheader .blurb p {
 	color:#fff;
 	float:right;
+	font-size: 1.07em;
 	line-height: 42px;
-	padding-left: 100px;
+	padding-left: 80px;
 	
 	/* HTML5 */
 	text-shadow:0 1px 0 #2697bd;
@@ -202,8 +203,9 @@ a.moreButton:hover {
 }
 
 .bubble {
-	padding: 15px 10px 5px 10px;
+	line-height: 18px;
 	margin: 0;
+	padding: 15px 10px 5px 10px;
 }
 
 #maincontent {

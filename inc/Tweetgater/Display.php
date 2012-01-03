@@ -98,7 +98,7 @@ class Tweetgater_Display
 					 . '<a href="http://twitter.com/' . $f['screen_name'] . '"><img src="' . $f['profile_image_url'] . '" alt="' . $f['name'] . '" width="48" height="48" /></a></div>'
                      . '    <div class="text">'
                      . '        <span class="name"><strong>' . $f['name'] . '</strong></span><br />'
-                     . (($f['description'] != '') ? $f['description'] . '<br />' : '')
+                     . '<span style="line-height:1.6em;">' . (($f['description'] != '') ? $f['description'] . '</span><br />' : '')
                      . '        <a class="follow" href="http://twitter.com/' . $f['screen_name'] . '">Follow @' . $f['screen_name'] . '</a>'
                      . '    </div>'
                      . '    <div style="clear:both;"></div>'

@@ -29,12 +29,12 @@
 <meta property="og:type" content="university" />
 <meta property="og:url" content="http://ucommwiedel.unl.edu/Tweet-gater" />
 <meta property="og:image" content="http://ucommwiedel.unl.edu/Tweet-gater/images/icon.jpg"/>
-<meta property="og:site_name" content="UNL.edu" />
+<meta property="og:site_name" content="University of Nebraska-Lincoln" />
 <meta property="fb:admins" content="511000653" />
 <meta property="og:description"
           content="With everything going on here at UNL, why not have an
           easier way of knowing what's happening? Here's a collection of
-          official UNL Twitter feeds to help keep you in the know."/>
+          official UNL Twitter feeds to help keep you in the know." />
 <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
 
 <link rel="stylesheet" type="text/css" media="screen" href="sharedcode/twitter.css" />
