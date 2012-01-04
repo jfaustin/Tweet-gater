@@ -529,7 +529,7 @@ ul.socialbuttons li {
 
 .tweet.friend {
 	border: none;
-	margin:0 auto;
+	margin-left: 45px;
 	padding:10px 0px;
 	width:460px;
 	
@@ -539,6 +539,11 @@ ul.socialbuttons li {
 	-khtml-border-radius: 0;
 	-moz-border-radius: 0; 
 	-webkit-border-radius: 0;
+	
+	box-shadow: none;
+	-khtml-box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
 }
 
 .tweet.friend.row1 {
