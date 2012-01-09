@@ -1,9 +1,5 @@
 @charset "UTF-8";
 
-#maincontentt {
-	margin:0 auto;
-}
-
 #maincontent
 .boxheader .blurb h3 {
 	filter: none;
@@ -25,4 +21,147 @@
 #maincontent
 .twitterTab h3 {
 	filter: none;
+}
+
+.socialbuttons li.twitter {
+	background: none;
+	display:block;
+	height: 37px;
+	width: 54px;
+}
+
+.socialbuttons li.twitter a {
+	background: url('../images/social_sprites.png') no-repeat 0 0px;
+	display: block;
+	height: 37px;
+	text-indent: -9999px;
+	width: 54px;
+	
+	/* CSS3 */
+	transition: none;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	-ms-transition: none;
+}
+
+.socialbuttons li.twitter a:hover, 
+.socialbuttons li.twitter a:focus { 
+	background: url('../images/social_sprites.png') no-repeat 0 -37px;
+	opacity: 1; 
+}
+
+.socialbuttons li.facebook {
+	background: none;
+	display: block;
+	height: 37px;
+	width: 37px;
+}
+
+.socialbuttons li.facebook a {
+	background: url('../images/social_sprites.png') no-repeat -54px 0;
+	display: block;
+	height: 37px;
+	opacity: 1;
+	text-indent: -9999px;
+	width: 37px;
+	
+	/* CSS3 */
+	transition: none;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	-ms-transition: none;
+}
+
+.socialbuttons li.facebook a:hover, 
+.socialbuttons li.facebook a:focus { 
+	background: url('../images/social_sprites.png') no-repeat -54px -37px;
+	opacity: 1; 
+}
+
+.socialbuttons li.youtube {
+	background: none;
+	display: block;
+	height: 37px;
+	width: 55px;
+}
+
+.socialbuttons li.youtube a {
+	background: url('../images/social_sprites.png') no-repeat -92px 0;
+	display: block;
+	height: 37px;
+	opacity: 0;
+	text-indent: -9999px;
+	width: 55px;
+	
+	/* CSS3 */
+	transition: none;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	-ms-transition: none;
+}
+
+.socialbuttons li.youtube a:hover, 
+.socialbuttons li.youtube a:focus { 
+	background: url('../images/social_sprites.png') no-repeat -92px -37px;
+	opacity: 1; 
+}
+
+#maincontent
+.followUS {
+	color: #838d96;
+	filter: none;
+}
+
+.tweet {
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#e8e8e8',GradientType=0 );
+}
+
+#maincontent
+.friend {
+	background: none;
+	border: none;
+	filter: none;
+	margin-left: 45px;
+	padding:10px 0px;
+	width:460px;
+	
+	
+	/* HTML5 */
+	border-radius: 0; 
+	-khtml-border-radius: 0;
+	-moz-border-radius: 0; 
+	-webkit-border-radius: 0;
+	
+	box-shadow: none;
+	-khtml-box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+#maincontent
+.friend.row1 {
+	background:#f4f4f4;
+	border-bottom:1px solid #ddd;
+	border-top:1px solid #ddd;
+	filter: none;
+}
+
+#maincontent
+.friend.row2 {
+	background:white;
+	filter: none;
+}
+
+#maincontent
+.friend .avatar {
+	padding-left:10px;
+}
+
+#maincontent
+.friend .text {
+	margin-left: 70px;
+	margin-right: 10px;
 }

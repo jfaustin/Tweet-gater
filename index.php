@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><!-- InstanceBegin template="/Templates/php.fixed.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<!DOCTYPE html>
+<html class="no-js" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><!-- InstanceBegin template="/Templates/php.fixed.dwt.php" codeOutsideHTMLIsLocked="false" -->
 <head>
 <!--
     Membership and regular participation in the UNL Web Developer Network
@@ -24,7 +24,6 @@
 <title>UNL | on Twitter</title>
 <!-- InstanceEndEditable --><!-- InstanceBeginEditable name="head" -->
 
-
 <meta property="og:title" content="UNL | on Twitter" />
 <meta property="og:type" content="university" />
 <meta property="og:url" content="http://ucommwiedel.unl.edu/Tweet-gater" />
@@ -38,11 +37,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
 
 <link rel="stylesheet" type="text/css" media="screen" href="sharedcode/twitter.css" />
+<link rel="stylesheet" type="text/css" media="handheld, only screen and (max-device-width:480px)" href="sharedcode/handheld.css" />
 <!--[if lte IE 8]>
         <link rel="stylesheet" type="text/css" media="screen" href="sharedcode/ie8-and-down.css" />
 <![endif]-->
 
-
+<script type="text/javascript" src="sharedcode/cssua.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
 <?php 

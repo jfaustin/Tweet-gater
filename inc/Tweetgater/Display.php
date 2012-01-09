@@ -222,7 +222,7 @@ class Tweetgater_Display
      */
     public static function search($terms, $page = 1) 
     {
-        $badWords = array('bitch', 'damn', 'fuck', 'hell ', 'shit');
+        $badWords = array('bitch', 'damn', 'fuck', 'hell ', 'shit', 'asshole');
 		$tweetgater = new Tweetgater_Twitter();
         $error = '';
         
