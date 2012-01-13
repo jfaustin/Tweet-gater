@@ -1,14 +1,5 @@
 @charset "UTF-8";
 
-@font-face {
-  font-family: "League Gothic";
-  src: url("webfonts/League_Gothic-webfont.eot");
-  src: local("☺"),
-    url("webfonts/League_Gothic-webfont.woff") format("woff"),
-    url("webfonts/League_Gothic-webfont.otf") format("opentype"),
-    url("webfonts/League_Gothic-webfont.svg#League_Gothic-webfont") format("svg");
-}
-
 .fixed #wdn_navigation_bar {
 	height:0;
 }
@@ -18,7 +9,7 @@
 	display:inline;
 	float:right;
 	list-style-type:none;
-	padding: 1.15em 0 0 0;
+	padding: 1.05em 0 0 0;
 }
 
 #maincontent
@@ -30,12 +21,9 @@
 #maincontent
 .followUs {
 	color: rgba(0, 0, 0, 0.4);
-	font-family: Helvetica,Arial,sans-serif;
 	font-size: 3.2em;
-	font-weight: bold;
 	letter-spacing: -0.06em;
-	line-height: 1.1em;
-	word-spacing: -0.05em;
+	margin-top: -8px;
     text-shadow: 0 2px rgba(255, 255, 255, 0.4);
 }
 
@@ -117,7 +105,7 @@ a.moreButton:hover {
 	color:#999;
 	float:right;
 	font-size:1em;
-	padding-top:10px;
+	padding-top:13px;
 }
 
 #maincontent
@@ -132,7 +120,7 @@ a.moreButton:hover {
 	height:340px;
 	margin-bottom:60px;
 	margin-top: -20px;
-	width:984px;
+	width:960px;
 }
 
 .boxheader .blurb {
@@ -140,7 +128,7 @@ a.moreButton:hover {
 	float:right;
 	font-size:1.25em;
 	line-height:36px;
-	margin-right:48px;
+	margin-right:60px;
 	margin-top:22px;
 	text-align:right;
 	width:485px;	
@@ -148,14 +136,10 @@ a.moreButton:hover {
 
 #maincontent
 .boxheader .blurb h3 {
-	color: rgb(95, 95, 95);
-	font-family: Helvetica,Arial,sans-serif;
 	font-size: 2.05em;
-	font-weight: bold;
 	letter-spacing: -0.038em;
 	line-height: 1.5em;
-	padding-top:54px;
-	word-spacing: -0.05em;
+	padding-top:50px;
 	
 	/* HTML5 */
     text-shadow: 0 1px 0 white;
@@ -178,10 +162,10 @@ a.moreButton:hover {
 	font-size: 1.15em;
 	letter-spacing: -0.1em; 
 	line-height: 42px;
-	padding-left: 80px;
+	padding-left: 86px;
 	
 	/* HTML5 */
-	text-shadow:0 1px 0 #2697bd;
+	text-shadow:0 1px 3px #398FAC;
 	filter: dropshadow(color=#2697bd, offx=0, offy=1); 
 }
 
@@ -192,12 +176,9 @@ a.moreButton:hover {
 }
 
 #maincontent {
-	background-color:#B70302;
-	background-image:url(../images/main_bg.jpg);
-	background-repeat:repeat;
-	margin:-35px -12px 0;
-	width:984px;
-	z-index:0;
+	background:	url(../images/main_footer.png) center bottom no-repeat,
+				url(../images/main_bg.jpg) left top repeat;
+	z-index: 0;
 }
 
 #maincontent h4 {
@@ -227,15 +208,23 @@ a.moreButton:hover {
 
 #maincontent ul.wdn_tabs {
 	border-bottom:none;
-	bottom: 45px;
+	bottom: 43px;
     height: 0;
-    position: relative;
+	left: 12px;
+}
+
+#maincontent ul.wdn_tabs li.selected {
+	z-index: 100;
 }
 
 #maincontent ul.wdn_tabs li {
 	font-family: Helvetica,Arial,sans-serif;
-	font-size:18px;
+	font-size:16px;
+	position: relative;
+	z-index: -1;
 }
+
+/*
 
 #maincontent ul.wdn_tabs li.last a {
 	padding: 0px 18px 0px 10px;
@@ -250,20 +239,21 @@ a.moreButton:hover {
 	margin-top:57px;
 }
 
-.right {
-	float:right;
-	margin-top:-15px;
-	position:absolute;
-	right:50px;	
+*/
+#right {
+	bottom: 17px;
+	float: right;
+	position:relative;
+	right:35px;	
 	width:278px;
 }
 
-.right .bubble p {
+#right .bubble p {
 	color:#594211;
 	font-size:11px;
 }
 
-.right .h4 {
+#right .h4 {
 	margin-bottom:10px;
 }
 
@@ -282,7 +272,7 @@ ul.socialbuttons li {
 	margin:0 19px;
 }
 
-.right .mini_container {
+#right .mini_container {
 	background-color: #f2eccb;
 	border:1px solid #CCC495;
 	margin-bottom: 1em;
@@ -458,8 +448,9 @@ ul.socialbuttons li {
 }
 
 .tweetContainer {
+	float: left;
 	left:70px;
-	margin-bottom:30px;
+	margin-bottom:40px;
 	position:relative;
 	width:560px;
 }
@@ -467,6 +458,8 @@ ul.socialbuttons li {
 .tweetBox {
 	background-color:#fff;
 	border:1px solid #e6e6e6;
+	margin-top: -55px;
+	padding-top: 58px;
 	width:508px;
 	z-index: 90;
 	
@@ -590,19 +583,4 @@ ul.socialbuttons li {
 	//text-shadow: 1px 1px 0 white; /* #F2F0E4 */
 	//filter: dropshadow(color=white, offx=1, offy=1);
 	
-}
-
-
-
-#footer {
-	padding-top:22px;
-}
-
-#footer_floater {
-	background-image:none;
-}
-
-#footer .footer_col {
-	position: absolute;
-    visibility: hidden;
 }
