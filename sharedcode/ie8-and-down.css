@@ -1,13 +1,16 @@
 @charset "UTF-8";
 
+#maincontent {
+	background:	url(../images/main_bg.jpg) left top repeat;
+}
+
 #maincontent
 .boxheader .blurb h3 {
 	filter: none;
 }
 
 .boxheader .blurb p {
-	filter: dropshadow(color=#2697bd, offx=0, offy=1);
-	font-weight:bold; 
+	filter: dropshadow(color=#398FAC, offx=1, offy=1);
 }
 
 #maincontent h4 {
@@ -21,6 +24,10 @@
 #maincontent
 .twitterTab h3 {
 	filter: none;
+}
+
+.share_bar p {
+	color: #0F8D12;
 }
 
 .socialbuttons li.twitter {
