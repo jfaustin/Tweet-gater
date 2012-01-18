@@ -166,7 +166,7 @@ a.moreButton:hover {
 	
 	/* HTML5 */
 	text-shadow:0 1px 3px #398FAC;
-	filter: dropshadow(color=#2697bd, offx=0, offy=1); 
+	filter: dropshadow(color=#398FAC, offx=0, offy=1); 
 }
 
 .bubble {
