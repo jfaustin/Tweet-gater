@@ -1,3 +1,15 @@
+<?php
+require_once 'inc/Tweetgater/Display.php';
+$tweetgater = new Tweetgater_Twitter();
+$config = $tweetgater->getConfigFile();
+
+$page = 1;
+
+if (isset($_GET['page'])) {
+    $page = (int)$_GET['page'];
+}
+?>
+
 <!DOCTYPE html>
 <html class="no-js" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -23,8 +35,8 @@
 <title>UNL | on Twitter</title>
 <meta property="og:title" content="UNL | on Twitter" />
 <meta property="og:type" content="university" />
-<meta property="og:url" content="http://ucommwiedel.unl.edu/Tweet-gater" />
-<meta property="og:image" content="http://ucommwiedel.unl.edu/Tweet-gater/images/icon.jpg"/>
+<meta property="og:url" content="<?php echo $config->site->url; ?>" />
+<meta property="og:image" content="<?php echo $config->site->url; ?>/images/icon.jpg"/>
 <meta property="og:site_name" content="University of Nebraska-Lincoln" />
 <meta property="fb:admins" content="511000653" />
 <meta property="og:description"
@@ -64,17 +76,8 @@
 		}
 </script>
 -->
-
-<?php 
-require_once 'inc/Tweetgater/Display.php';
-$page = 1;
-
-if (isset($_GET['page'])) {
-    $page = (int)$_GET['page'];
-}
-?>
 </head>
-<body class="fixed" onscroll="reposition()">
+<body class="fixed">
 <p class="skipnav"> <a class="skipnav" href="#maincontent">Skip Navigation</a> </p>
 <div id="wdn_wrapper">
     <div id="header"> <a href="http://www.unl.edu/" title="UNL website"><img src="/wdn/templates_3.0/images/logo.png" alt="UNL graphic identifier" id="logo" /></a>
@@ -136,11 +139,11 @@ if (isset($_GET['page'])) {
 			<ul class="like_bar">
          	
             <li>
-            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://ucommwiedel.unl.edu/Tweet-gater" data-text="Check out the UNL twitter site!" data-via="UNLFeed">Tweet</a>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo $config->site->url; ?>" data-text="Check out the UNL twitter site!" data-via="UNLFeed">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>
 
 			<li>
-            <div class="fb-like" data-href="http://ucommwiedel.unl.edu/Tweet-gater" data-send="false" data-layout="button_count" data-width="110" data-show-faces="true" data-font="arial"></div></li>
+            <div class="fb-like" data-href="<?php echo $config->site->url; ?>" data-send="false" data-layout="button_count" data-width="110" data-show-faces="true" data-font="arial"></div></li>
 			
             <li>
 			<div class="g-plusone" data-size="medium"></div>
