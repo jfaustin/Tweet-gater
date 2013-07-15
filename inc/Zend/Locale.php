@@ -14,9 +14,9 @@
  *
  * @category  Zend
  * @package   Zend_Locale
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: Locale.php 22314 2010-05-27 19:38:50Z thomas $
+ * @version   $Id: Locale.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
@@ -24,7 +24,7 @@
  *
  * @category  Zend
  * @package   Zend_Locale
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Locale
@@ -247,8 +247,7 @@ class Zend_Locale
      */
     public function __construct($locale = null)
     {
-        $locale = self::_prepareLocale($locale);
-        $this->setLocale((string) $locale);
+        $this->setLocale($locale);
     }
 
     /**
@@ -427,8 +426,12 @@ class Zend_Locale
         }
 
         $httplanguages = getenv('HTTP_ACCEPT_LANGUAGE');
+        if (empty($httplanguages) && array_key_exists('HTTP_ACCEPT_LANGUAGE', $_SERVER)) {
+            $httplanguages = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+        }
+
         $languages     = array();
-        if (empty($httplanguages) === true) {
+        if (empty($httplanguages)) {
             return $languages;
         }
 
@@ -663,7 +666,7 @@ class Zend_Locale
         require_once 'Zend/Locale/Data.php';
         $locale = self::findLocale($locale);
         $result = Zend_Locale_Data::getContent($locale, $path, $value);
-        if (empty($result) === true) {
+        if (empty($result) === true && '0' !== $result) {
             return false;
         }
 
@@ -928,9 +931,7 @@ class Zend_Locale
     public static function getCache()
     {
         require_once 'Zend/Locale/Data.php';
-        $cache = Zend_Locale_Data::getCache();
-
-        return $cache;
+        return Zend_Locale_Data::getCache();
     }
 
     /**
@@ -970,12 +971,13 @@ class Zend_Locale
     /**
      * Clears all set cache data
      *
+     * @param string $tag Tag to clear when the default tag name is not used
      * @return void
      */
-    public static function clearCache()
+    public static function clearCache($tag = null)
     {
         require_once 'Zend/Locale/Data.php';
-        Zend_Locale_Data::clearCache();
+        Zend_Locale_Data::clearCache($tag);
     }
 
     /**

@@ -14,9 +14,9 @@
  *
  * @category   Zend
  * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Int.php 20532 2010-01-22 20:18:23Z thomas $
+ * @version    $Id: Int.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
@@ -32,7 +32,7 @@ require_once 'Zend/Locale/Format.php';
 /**
  * @category   Zend
  * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Validate_Int extends Zend_Validate_Abstract
@@ -44,7 +44,7 @@ class Zend_Validate_Int extends Zend_Validate_Abstract
      * @var array
      */
     protected $_messageTemplates = array(
-        self::INVALID => "Invalid type given, value should be string or integer",
+        self::INVALID => "Invalid type given. String or integer expected",
         self::NOT_INT => "'%value%' does not appear to be an integer",
     );
 

@@ -14,9 +14,9 @@
  *
  * @category   Zend
  * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Alpha.php 20442 2010-01-20 15:15:40Z matthew $
+ * @version    $Id: Alpha.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
@@ -27,7 +27,7 @@ require_once 'Zend/Validate/Abstract.php';
 /**
  * @category   Zend
  * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Validate_Alpha extends Zend_Validate_Abstract
@@ -57,7 +57,7 @@ class Zend_Validate_Alpha extends Zend_Validate_Abstract
      * @var array
      */
     protected $_messageTemplates = array(
-        self::INVALID      => "Invalid type given, value should be a string",
+        self::INVALID      => "Invalid type given. String expected",
         self::NOT_ALPHA    => "'%value%' contains non alphabetic characters",
         self::STRING_EMPTY => "'%value%' is an empty string"
     );

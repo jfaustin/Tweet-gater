@@ -14,9 +14,9 @@
  *
  * @category   Zend
  * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Callback.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: Callback.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
@@ -27,7 +27,7 @@ require_once 'Zend/Validate/Abstract.php';
 /**
  * @category   Zend
  * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Validate_Callback extends Zend_Validate_Abstract
@@ -49,7 +49,7 @@ class Zend_Validate_Callback extends Zend_Validate_Abstract
      */
     protected $_messageTemplates = array(
         self::INVALID_VALUE    => "'%value%' is not valid",
-        self::INVALID_CALLBACK => "Failure within the callback, exception returned",
+        self::INVALID_CALLBACK => "An exception has been raised within the callback",
     );
 
     /**

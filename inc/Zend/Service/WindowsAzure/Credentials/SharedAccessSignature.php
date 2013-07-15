@@ -14,9 +14,9 @@
  *
  * @category   Zend
  * @package    Zend_Service_WindowsAzure
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: SharedAccessSignature.php 20785 2010-01-31 09:43:03Z mikaelkael $
+ * @version    $Id: SharedAccessSignature.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
@@ -25,19 +25,9 @@
 require_once 'Zend/Service/WindowsAzure/Credentials/CredentialsAbstract.php';
 
 /**
- * @see Zend_Service_WindowsAzure_Storage
- */
-require_once 'Zend/Service/WindowsAzure/Storage.php';
-
-/**
- * @see Zend_Http_Client
- */
-require_once 'Zend/Http/Client.php';
-
-/**
  * @category   Zend
  * @package    Zend_Service_WindowsAzure
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */ 
 class Zend_Service_WindowsAzure_Credentials_SharedAccessSignature
@@ -93,6 +83,7 @@ class Zend_Service_WindowsAzure_Credentials_SharedAccessSignature
 	{
 		foreach ($value as $url) {
 			if (strpos($url, $this->_accountName) === false) {
+				require_once 'Zend/Service/WindowsAzure/Exception.php';
 				throw new Zend_Service_WindowsAzure_Exception('The permission set can only contain URLs for the account name specified in the Zend_Service_WindowsAzure_Credentials_SharedAccessSignature instance.');
 			}
 		}
@@ -289,6 +280,7 @@ class Zend_Service_WindowsAzure_Credentials_SharedAccessSignature
 	 * @param boolean $forTableStorage Is the request for table storage?
 	 * @param string $resourceType Resource type
 	 * @param string $requiredPermission Required permission
+	 * @param mixed  $rawData Raw post data
 	 * @return array Array of headers
 	 */
 	public function signRequestHeaders(
@@ -298,7 +290,8 @@ class Zend_Service_WindowsAzure_Credentials_SharedAccessSignature
 		$headers = null,
 		$forTableStorage = false,
 		$resourceType = Zend_Service_WindowsAzure_Storage::RESOURCE_UNKNOWN,
-		$requiredPermission = Zend_Service_WindowsAzure_Credentials_CredentialsAbstract::PERMISSION_READ
+		$requiredPermission = Zend_Service_WindowsAzure_Credentials_CredentialsAbstract::PERMISSION_READ,
+		$rawData = null
 	) {
 	    return $headers;
 	}

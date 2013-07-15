@@ -15,22 +15,21 @@
  * @category   Zend
  * @package    Zend_Service_WindowsAzure
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: TableInstance.php 20785 2010-01-31 09:43:03Z mikaelkael $
+ * @version    $Id: TableInstance.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
- * @see Zend_Service_WindowsAzure_Exception
+ * @see Zend_Service_WindowsAzure_Storage_StorageEntityAbstract
  */
-require_once 'Zend/Service/WindowsAzure/Exception.php';
-
+require_once 'Zend/Service/WindowsAzure/Storage/StorageEntityAbstract.php';
 
 /**
  * @category   Zend
  * @package    Zend_Service_WindowsAzure
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * 
  * @property string  $Id              Id
@@ -39,14 +38,8 @@ require_once 'Zend/Service/WindowsAzure/Exception.php';
  * @property string  $Updated         Updated
  */
 class Zend_Service_WindowsAzure_Storage_TableInstance
+	extends Zend_Service_WindowsAzure_Storage_StorageEntityAbstract
 {
-    /**
-     * Data
-     * 
-     * @var array
-     */
-    protected $_data = null;
-    
     /**
      * Constructor
      * 
@@ -63,33 +56,5 @@ class Zend_Service_WindowsAzure_Storage_TableInstance
             'href'             => $href,
             'updated'          => $updated
         );
-    }
-    
-    /**
-     * Magic overload for setting properties
-     * 
-     * @param string $name     Name of the property
-     * @param string $value    Value to set
-     */
-    public function __set($name, $value) {
-        if (array_key_exists(strtolower($name), $this->_data)) {
-            $this->_data[strtolower($name)] = $value;
-            return;
-        }
-
-        throw new Exception("Unknown property: " . $name);
-    }
-
-    /**
-     * Magic overload for getting properties
-     * 
-     * @param string $name     Name of the property
-     */
-    public function __get($name) {
-        if (array_key_exists(strtolower($name), $this->_data)) {
-            return $this->_data[strtolower($name)];
-        }
-
-        throw new Exception("Unknown property: " . $name);
     }
 }

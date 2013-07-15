@@ -14,9 +14,9 @@
  *
  * @category  Zend
  * @package   Zend_File_Transfer
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: Http.php 20911 2010-02-04 19:40:57Z thomas $
+ * @version   $Id: Http.php 25087 2012-11-06 21:15:45Z rob $
  */
 
 /**
@@ -29,7 +29,7 @@ require_once 'Zend/File/Transfer/Adapter/Abstract.php';
  *
  * @category  Zend
  * @package   Zend_File_Transfer
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_File_Transfer_Adapter_Http extends Zend_File_Transfer_Adapter_Abstract
@@ -128,6 +128,10 @@ class Zend_File_Transfer_Adapter_Http extends Zend_File_Transfer_Adapter_Abstrac
         // Workaround for a PHP error returning empty $_FILES when form data exceeds php settings
         if (empty($this->_files) && ($content > 0)) {
             if (is_array($files)) {
+                if (0 === count($files)) {
+                    return false;
+                }
+
                 $files = current($files);
             }
 
@@ -304,7 +308,7 @@ class Zend_File_Transfer_Adapter_Http extends Zend_File_Transfer_Adapter_Abstrac
     {
         if (!function_exists('apc_fetch') and !function_exists('uploadprogress_get_info')) {
             require_once 'Zend/File/Transfer/Exception.php';
-            throw new Zend_File_Transfer_Exception('Wether APC nor uploadprogress extension installed');
+            throw new Zend_File_Transfer_Exception('Neither APC nor uploadprogress extension installed');
         }
 
         $session = 'Zend_File_Transfer_Adapter_Http_ProgressBar';

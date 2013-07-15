@@ -14,8 +14,8 @@
  *
  * @category   Zend
  * @package    Zend_Translate
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: Gettext.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: Gettext.php 24593 2012-01-05 20:35:02Z matthew $
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
@@ -28,7 +28,7 @@ require_once 'Zend/Translate/Adapter.php';
 /**
  * @category   Zend
  * @package    Zend_Translate
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Translate_Adapter_Gettext extends Zend_Translate_Adapter {
@@ -72,6 +72,7 @@ class Zend_Translate_Adapter_Gettext extends Zend_Translate_Adapter {
             throw new Zend_Translate_Exception('Error opening translation file \'' . $filename . '\'.');
         }
         if (@filesize($filename) < 10) {
+            @fclose($this->_file);
             require_once 'Zend/Translate/Exception.php';
             throw new Zend_Translate_Exception('\'' . $filename . '\' is not a gettext file');
         }
@@ -83,6 +84,7 @@ class Zend_Translate_Adapter_Gettext extends Zend_Translate_Adapter {
         } else if (strtolower(substr(dechex($input[1]), -8)) == "de120495") {
             $this->_bigEndian = true;
         } else {
+            @fclose($this->_file);
             require_once 'Zend/Translate/Exception.php';
             throw new Zend_Translate_Exception('\'' . $filename . '\' is not a gettext file');
         }
@@ -111,7 +113,7 @@ class Zend_Translate_Adapter_Gettext extends Zend_Translate_Adapter {
             if ($origtemp[$count * 2 + 1] != 0) {
                 fseek($this->_file, $origtemp[$count * 2 + 2]);
                 $original = @fread($this->_file, $origtemp[$count * 2 + 1]);
-                $original = explode(chr(00), $original);
+                $original = explode("\0", $original);
             } else {
                 $original[0] = '';
             }
@@ -119,7 +121,7 @@ class Zend_Translate_Adapter_Gettext extends Zend_Translate_Adapter {
             if ($transtemp[$count * 2 + 1] != 0) {
                 fseek($this->_file, $transtemp[$count * 2 + 2]);
                 $translate = fread($this->_file, $transtemp[$count * 2 + 1]);
-                $translate = explode(chr(00), $translate);
+                $translate = explode("\0", $translate);
                 if ((count($original) > 1) && (count($translate) > 1)) {
                     $this->_data[$locale][$original[0]] = $translate;
                     array_shift($original);
@@ -131,6 +133,8 @@ class Zend_Translate_Adapter_Gettext extends Zend_Translate_Adapter {
                 }
             }
         }
+        
+        @fclose($this->_file);
 
         $this->_data[$locale][''] = trim($this->_data[$locale]['']);
         if (empty($this->_data[$locale][''])) {

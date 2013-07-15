@@ -14,9 +14,9 @@
  *
  * @category   Zend
  * @package    Zend_Json
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Decoder.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: Decoder.php 24799 2012-05-12 19:27:07Z adamlundrigan $
  */
 
 /**
@@ -29,7 +29,7 @@ require_once 'Zend/Json.php';
  *
  * @category   Zend
  * @package    Zend_Json
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Json_Decoder
@@ -236,6 +236,9 @@ class Zend_Json_Decoder
                 // Create new StdClass and populate with $members
                 $result = new StdClass();
                 foreach ($members as $key => $value) {
+                    if ($key === '') {
+                        $key = '_empty_';
+                    }
                     $result->$key = $value;
                 }
                 break;
@@ -367,19 +370,19 @@ class Zend_Json_Decoder
                                 $result .= '/';
                                 break;
                             case 'b' :
-                                $result .= chr(8);
+                                $result .= "\x08";
                                 break;
                             case 'f' :
-                                $result .= chr(12);
+                                $result .= "\x0c";
                                 break;
                             case 'n' :
-                                $result .= chr(10);
+                                $result .= "\x0a";
                                 break;
                             case 'r' :
-                                $result .= chr(13);
+                                $result .= "\x0d";
                                 break;
                             case 't' :
-                                $result .= chr(9);
+                                $result .= "\x09";
                                 break;
                             case '\'' :
                                 $result .= '\'';

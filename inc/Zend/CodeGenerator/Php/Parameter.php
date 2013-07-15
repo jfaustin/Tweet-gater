@@ -15,9 +15,9 @@
  * @category   Zend
  * @package    Zend_CodeGenerator
  * @subpackage PHP
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Parameter.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: Parameter.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
@@ -33,7 +33,7 @@ require_once 'Zend/CodeGenerator/Php/Parameter/DefaultValue.php';
 /**
  * @category   Zend
  * @package    Zend_CodeGenerator
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_CodeGenerator_Php_Parameter extends Zend_CodeGenerator_Php_Abstract
@@ -237,7 +237,7 @@ class Zend_CodeGenerator_Php_Parameter extends Zend_CodeGenerator_Php_Abstract
             $output .= ' = ';
             if (is_string($this->_defaultValue)) {
                 $output .= '\'' . $this->_defaultValue . '\'';
-            } else if($this->_defaultValue instanceof Zend_CodeGenerator_Php_ParameterDefaultValue) {
+            } else if($this->_defaultValue instanceof Zend_CodeGenerator_Php_Parameter_DefaultValue) {
                 $output .= (string)$this->_defaultValue;
             } else {
                 $output .= $this->_defaultValue;

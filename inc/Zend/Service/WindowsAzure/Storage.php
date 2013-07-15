@@ -15,15 +15,15 @@
  * @category   Zend
  * @package    Zend_Service_WindowsAzure
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Storage.php 21315 2010-03-04 00:50:25Z stas $
+ * @version    $Id: Storage.php 24697 2012-03-23 13:11:04Z ezimuel $
  */
 
 /**
- * @see Zend_Service_WindowsAzure_Credentials_CredentialsAbstract
+ * @see Zend_Http_Client
  */
-require_once 'Zend/Service/WindowsAzure/Credentials/CredentialsAbstract.php';
+require_once 'Zend/Http/Client.php';
 
 /**
  * @see Zend_Service_WindowsAzure_Credentials_SharedKey
@@ -34,27 +34,11 @@ require_once 'Zend/Service/WindowsAzure/Credentials/SharedKey.php';
  * @see Zend_Service_WindowsAzure_RetryPolicy_RetryPolicyAbstract
  */
 require_once 'Zend/Service/WindowsAzure/RetryPolicy/RetryPolicyAbstract.php';
-
-/**
- * @see Zend_Service_WindowsAzure_Exception
- */
-require_once 'Zend/Service/WindowsAzure/Exception.php';
-
-/**
- * @see Zend_Http_Client
- */
-require_once 'Zend/Http/Client.php';
-
-/**
- * @see Zend_Http_Response
- */
-require_once 'Zend/Http/Response.php';
-
 /**
  * @category   Zend
  * @package    Zend_Service_WindowsAzure
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Service_WindowsAzure_Storage
@@ -84,11 +68,18 @@ class Zend_Service_WindowsAzure_Storage
 	const RESOURCE_QUEUE       = "q";
 	
 	/**
+	 * HTTP header prefixes
+	 */
+	const PREFIX_PROPERTIES      = "x-ms-prop-";
+	const PREFIX_METADATA        = "x-ms-meta-";
+	const PREFIX_STORAGE_HEADER  = "x-ms-";
+	
+	/**
 	 * Current API version
 	 * 
 	 * @var string
 	 */
-	protected $_apiVersion = '2009-04-14';
+	protected $_apiVersion = '2009-09-19';
 	
 	/**
 	 * Storage host name
@@ -232,6 +223,16 @@ class Zend_Service_WindowsAzure_Storage
 		$this->_httpClientChannel->setAdapter($adapterInstance);
 	}
 	
+    /**
+     * Retrieve HTTP client channel
+     * 
+     * @return Zend_Http_Client_Adapter_Interface
+     */
+    public function getHttpClientChannel()
+    {
+        return $this->_httpClientChannel;
+    }
+	
 	/**
 	 * Set retry policy to use when making requests
 	 *
@@ -262,9 +263,7 @@ class Zend_Service_WindowsAzure_Storage
 	    
 	    if ($this->_useProxy) {
 	    	$credentials = explode(':', $this->_proxyCredentials);
-	    	if(!isset($credentials[1])) {
-	    	    $credentials[1] = '';
-	    	}
+	    	
 	    	$this->_httpClientChannel->setConfig(array(
 				'proxy_host' => $this->_proxyUrl,
 	    		'proxy_port' => $this->_proxyPort,
@@ -380,14 +379,14 @@ class Zend_Service_WindowsAzure_Storage
 		$requestUrl     = $this->_credentials
 						  ->signRequestUrl($this->getBaseUrl() . $path . $queryString, $resourceType, $requiredPermission);
 		$requestHeaders = $this->_credentials
-						  ->signRequestHeaders($httpVerb, $path, $queryString, $headers, $forTableStorage, $resourceType, $requiredPermission);
+						  ->signRequestHeaders($httpVerb, $path, $queryString, $headers, $forTableStorage, $resourceType, $requiredPermission, $rawData);
 
-		// Prepare request
+		// Prepare request 
 		$this->_httpClientChannel->resetParameters(true);
 		$this->_httpClientChannel->setUri($requestUrl);
 		$this->_httpClientChannel->setHeaders($requestHeaders);
 		$this->_httpClientChannel->setRawData($rawData);
-		
+				
 		// Execute request
 		$response = $this->_retryPolicy->execute(
 		    array($this->_httpClientChannel, 'request'),
@@ -407,6 +406,7 @@ class Zend_Service_WindowsAzure_Storage
 	protected function _parseResponse(Zend_Http_Response $response = null)
 	{
 		if (is_null($response)) {
+			require_once 'Zend/Service/WindowsAzure/Exception.php';
 			throw new Zend_Service_WindowsAzure_Exception('Response should not be null.');
 		}
 		
@@ -444,15 +444,22 @@ class Zend_Service_WindowsAzure_Storage
 		$headers = array();
 		foreach ($metadata as $key => $value) {
 			if (strpos($value, "\r") !== false || strpos($value, "\n") !== false) {
-				throw new Zend_Service_WindowsAzure_Exception('Metadata cannot contain newline characters.');
+                            require_once 'Zend/Service/WindowsAzure/Exception.php';
+                            throw new Zend_Service_WindowsAzure_Exception('Metadata cannot contain newline characters.');
 			}
+			
+			if (!self::isValidMetadataName($key)) {
+                            require_once 'Zend/Service/WindowsAzure/Exception.php';
+                            throw new Zend_Service_WindowsAzure_Exception('Metadata name does not adhere to metadata naming conventions. See http://msdn.microsoft.com/en-us/library/aa664670(VS.71).aspx for more information.');
+			}
+			
 		    $headers["x-ms-meta-" . strtolower($key)] = $value;
 		}
 		return $headers;
 	}
 	
 	/**
-	 * Parse metadata errors
+	 * Parse metadata headers
 	 * 
 	 * @param array $headers HTTP headers containing metadata
 	 * @return array
@@ -472,6 +479,22 @@ class Zend_Service_WindowsAzure_Storage
 		    }
 		}
 		return $metadata;
+	}
+	
+	/**
+	 * Parse metadata XML
+	 * 
+	 * @param SimpleXMLElement $parentElement Element containing the Metadata element.
+	 * @return array
+	 */
+	protected function _parseMetadataElement($element = null)
+	{
+		// Metadata present?
+		if (!is_null($element) && isset($element->Metadata) && !is_null($element->Metadata)) {
+			return get_object_vars($element->Metadata);
+		}
+
+		return array();
 	}
 	
 	/**
@@ -504,4 +527,34 @@ class Zend_Service_WindowsAzure_Storage
 	{
 	    return str_replace(' ', '%20', $value);
 	}
+	
+	/**
+	 * Is valid metadata name?
+	 *
+	 * @param string $metadataName Metadata name
+	 * @return boolean
+	 */
+    public static function isValidMetadataName($metadataName = '')
+    {
+        if (preg_match("/^[a-zA-Z0-9_@][a-zA-Z0-9_]*$/", $metadataName) === 0) {
+            return false;
+        }
+    
+        if ($metadataName == '') {
+            return false;
+        }
+
+        return true;
+    }
+    
+    /**
+     * Builds a query string from an array of elements
+     * 
+     * @param array     Array of elements
+     * @return string   Assembled query string
+     */
+    public static function createQueryStringFromArray($queryString)
+    {
+    	return count($queryString) > 0 ? '?' . implode('&', $queryString) : '';
+    }	
 }
