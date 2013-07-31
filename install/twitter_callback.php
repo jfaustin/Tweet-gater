@@ -10,7 +10,7 @@ $session = new Zend_Session_Namespace('twitterAppAuthentication');
 
 $config = array(
     'callbackUrl'     => $installUrl . '/install/twitter_callback.php',
-    'siteUrl'         => 'http://twitter.com/oauth',
+    'siteUrl'         => 'https://twitter.com/oauth',
     'consumerKey'     => $oauthConfig->oauth->consumerKey,
     'consumerSecret'  => $oauthConfig->oauth->consumerSecret,
 );

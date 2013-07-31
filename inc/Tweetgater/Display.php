@@ -33,24 +33,35 @@ class Tweetgater_Display
         $ret = '';
         
         if ($error == '') {
+			$ret .= '<div class="tweetHeader">'
+				 . '<h2>Tweets from UNL Community</h2>'
+				 . '<a href="#accounts">&rarr; <span>See all accounts</span></a>' 
+				 . '</div>'
+                 .  '<div style="clear:both;"></div>'
+			;
             foreach ($timeline as $t) {
                 $ret .= '<div class="tweet">'
                      . '    <div class="avatar">'
-                     . '        <img src="' . $t['user-profile_image_url'] . '" alt="' . $t['user-name'] . '" width="48" height="48" />'
+					 . '<a class="username" href="http://twitter.com/' . $t['user-screen_name'] . '">'
+                     . '        <img src="' . $t['user-profile_image_url'] . '" alt="' . $t['user-name'] . '" width="48" height="48" /></a>'
                      . '    </div>'
                      . '    <div class="text">'
-                     . '        <a class="username" href="http://twitter.com/' . $t['user-screen_name'] . '">' . $t['user-screen_name'] . '</a> ' . $t['text']
+                     . '        <a class="username" href="http://twitter.com/' . $t['user-screen_name'] . '"><strong>' . $t['user-name'] . '</strong></a> <br />' . $t['text']
                      . '    </div>'
                      . '    <div class="origination"> ' . $t['elapsed_time'] . ' from ' . $t['source']
                      . (($t['in_reply_to_screen_name'] != '') ? ' <a class="user" href="http://www.twitter.com/' . $t['in_reply_to_screen_name'] . '/status/' . $t['in_reply_to_status_id'] . '">in reply to ' . $t['in_reply_to_screen_name'] . '</a>' : '')
                      . '    </div>'
-                     . '    <div style="clear:both;"></div>'
                      . '</div>'
+					 . '<div class="wrap-l"></div>'
+					 . '<div class="wrap-r"></div>'
+					 
+					 //Clear space for next tweet
+					 . '<div style="margin-bottom:-50px;"></div>'
                      ;
             }
             
-            $ret .= '<br /><br />'
-                 . '<a class="twitterButton" href="index.php?page=' . ($page + 1) . '">More...</a>'
+            $ret .= '<br />'
+                 . '<a class="moreButton" href="index.php?page=' . ($page + 1) . '">More...</a>'
                  ;
         } else {
             $ret = $error;
@@ -78,15 +89,17 @@ class Tweetgater_Display
         $ret = '';
         
         if ($error == '') {
-            $ret = '<h2 class="tweetHeader">' . count($friends) . ' Organizations are Tweeting</h2>';
+            $ret .= '<h2 class="tweetHeader">' . count($friends) . ' Accounts are Tweeting</h2>'
+				 .  '<div style="clear:both;"></div>';
             
             $i = 0; 
             foreach ($friends as $f) {
                 $ret .= '<div class="tweet friend ' . (($i % 2 == 0) ? 'row1' : 'row2') . '">'
-                     . '    <div class="avatar"><img src="' . $f['profile_image_url'] . '" alt="' . $f['name'] . '" width="48" height="48" /></div>'
+                     . '    <div class="avatar">'
+					 . '<a href="http://twitter.com/' . $f['screen_name'] . '"><img src="' . $f['profile_image_url'] . '" alt="' . $f['name'] . '" width="48" height="48" /></a></div>'
                      . '    <div class="text">'
-                     . '        <span class="name">' . $f['name'] . '</span><br />'
-                     . (($f['description'] != '') ? $f['description'] . '<br />' : '')
+                     . '        <span class="name"><strong>' . $f['name'] . '</strong></span><br />'
+                     . '<span style="line-height:1.6em;">' . (($f['description'] != '') ? $f['description'] . '</span><br />' : '')
                      . '        <a class="follow" href="http://twitter.com/' . $f['screen_name'] . '">Follow @' . $f['screen_name'] . '</a>'
                      . '    </div>'
                      . '    <div style="clear:both;"></div>'
@@ -94,7 +107,9 @@ class Tweetgater_Display
                      ;
                      
                 $i++;
-            }         
+            }  
+			
+			$ret .= '<br />';       
         } else {
             $ret = $error;
         }
@@ -207,8 +222,8 @@ class Tweetgater_Display
      */
     public static function search($terms, $page = 1) 
     {
-        $tweetgater = new Tweetgater_Twitter();
-                       
+        $badWords = array('bitch', 'damn', 'fuck', 'hell ', 'shit', 'asshole', 'xxx');
+		$tweetgater = new Tweetgater_Twitter();
         $error = '';
         
         try {    
@@ -216,29 +231,48 @@ class Tweetgater_Display
         } catch (Exception $e) {
             $error = $e->getMessage();
         }
-        
+
         $ret = '';
         if ($error == '') {
-            foreach ($searchResults as $t) {
+			$ret .= '<div class="tweetHeader">'
+				 .  '<h2>Tweets about UNL</h2>'
+				 .  '</div>' 
+                 .  '<div style="clear:both;"></div>'
+			;
+			foreach ($searchResults as $t) {
+				
+				/* Profanity filter */
+				foreach ($badWords as $check) {
+					$curse = substr_count(strtolower($t['text']), $check);
+					if ($curse) {
+						continue 2;
+					}
+				}
+					
+				
                 $ret .= '<div class="tweet">'
                      . '    <div class="avatar">'
-                     . '        <img src="' . $t['user-profile_image_url'] . '" alt="' . $t['user-name'] . '" width="48" height="48" />'
+                     . '        <a class="username" href="http://twitter.com/' . $t['user-screen_name'] . '">' . '<img src="' . $t['user-profile_image_url'] . '" alt="' . $t['user-name'] . '" width="48" height="48" /></a>'
                      . '    </div>'
                      . '    <div class="text">'
-                     . '        <a class="username" href="http://twitter.com/' . $t['user-screen_name'] . '">' . $t['user-screen_name'] . '</a> ' . $t['text']
+                     . '        <a class="username" href="http://twitter.com/' . $t['user-screen_name'] . '"><strong>' . $t['user-name'] . '</strong></a> <br />' . $t['text']
                      . '    </div>'
                      . '    <div class="origination"> ' . $t['elapsed_time'] . ' from ' . $t['source']
                      . (($t['in_reply_to_screen_name'] != '') ? ' <a class="user" href="http://www.twitter.com/' . $t['in_reply_to_screen_name'] . '/status/' . $t['in_reply_to_status_id'] . '">in reply to ' . $t['in_reply_to_screen_name'] . '</a>' : '')
                      . '    </div>'
-                     . '    <div style="clear:both;"></div>'
                      . '</div>'
+					 . '<div class="wrap-l"></div>'
+					 . '<div class="wrap-r"></div>'
+					 
+					 //Clear space for next tweet
+					 . '<div style="margin-bottom:-52px;"></div>'
                      ;
             }
             
             $ret .= '<br /><br />'
-                 . '<a class="twitterButton" href="search.php?page=' . ($page + 1) . '">More...</a>'
+                 //. '<a class="moreButton" href="search.php?page=' . ($page + 1) . '">More...</a>'
                  ;    
-
+				 
             return $ret;
         }
         

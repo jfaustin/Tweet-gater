@@ -13,6 +13,8 @@ Notes
    
 *  While not required, we would prefer that you state where the code used to create 
    your site came from.  Our contact information is at the top of this document.
+
+*  Make sure the cache_dir is writtable
    
 
 Installation

@@ -3,7 +3,7 @@ set_include_path(realpath(dirname(__FILE__) . '/../'));
 
 class Tweetgater_Installer
 {
-    const ZF_REQUIREMENT = '1.10.6';
+    const ZF_REQUIREMENT = '1.12.3';
     
     protected $_writable = array(
         '../config',

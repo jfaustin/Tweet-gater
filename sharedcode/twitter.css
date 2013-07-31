@@ -1,0 +1,590 @@
+@charset "UTF-8";
+
+.fixed #wdn_navigation_bar {
+	height:0;
+}
+
+#maincontent
+.like_bar {
+	display:inline;
+	float:right;
+	list-style-type:none;
+	padding: 1.05em 0 0 0;
+}
+
+#maincontent
+.like_bar li {
+	float: left;
+	margin-right: -5px;
+}
+
+#maincontent
+.followUs {
+	color: #fefefe;
+	font-size: 3.2em;
+	letter-spacing: -0.06em;
+	margin-top: -8px;
+    text-shadow: 0 -2px 1px #4F844B;
+}
+
+.theTab {
+	position:absolute;
+	top: 295px;
+	left: 45px;
+	width: 425px;
+}
+
+.share_bar {
+	background-image:url(../images/ripout.png);
+	background-repeat:no-repeat;
+	height: 46px;
+	padding: 3px 0 0 0;
+	width: 400px;
+	position: absolute;
+	top:305px;
+	right: 5px;
+}
+
+.share_bar p {
+	color: rgba(255, 255, 255, 0.35);
+	font: bold 1.85em "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	line-height: 1;
+	padding: 11px 0 0 22px;
+	text-align: center;
+	text-shadow: 0 -2px rgba(15, 141, 18, 0.9);
+}
+
+a.tooltip {
+	display:block;
+}
+
+a.moreButton {
+	background-image: url(../images/more.gif);
+	background-repeat: repeat-x;
+	border: 1px solid #CCC;
+	border-color: #DDDD #AAA #AAA #DDD;
+	display: block;
+	font-size: 1.4em;
+	font-weight: bold;
+	line-height: 30px;
+	margin:0 auto;
+	margin-bottom:10px;
+	text-align: center;
+	text-decoration: none;
+	width: 95%;
+	
+	/* HTML5 */
+	border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	
+}
+
+a.moreButton:hover {
+	background-position:left -78px;
+    border:1px solid #BBBBBB;
+    text-decoration:none;
+}
+
+.tweetHeader {
+	border-bottom: #DDD 2px dashed;
+	float:left;
+	margin:-38px 25px 18px 25px;
+	padding-bottom: 0;
+	width:460px;
+}
+
+#maincontent
+.tweetHeader h2 {
+	float:left;
+	padding-bottom:7px;
+}
+
+#maincontent
+.tweetHeader a {
+	color:#999;
+	float:right;
+	font-size:1em;
+	padding-top:13px;
+}
+
+#maincontent
+.tweetHeader a:hover span {
+	text-decoration:underline;
+}
+
+.boxheader {
+	background:	url(../images/main_header.png) center top no-repeat,
+				url(../images/t-head.jpg) center top no-repeat;
+	height:340px;
+	margin-bottom:65px;
+	margin-top: -12px;
+	width:960px;
+}
+
+.boxheader .blurb {
+	display:block;
+	float:right;
+	font-size:1.25em;
+	line-height:36px;
+	margin-right:68px;
+	margin-top:12px;
+	text-align:right;
+	width:485px;	
+}
+
+#maincontent
+.boxheader .blurb h3 {
+	font-size: 2.05em;
+	letter-spacing: -0.038em;
+	line-height: 1.5em;
+	padding-top:50px;
+	
+	/* HTML5 */
+    text-shadow: 0 1px 0 white;
+	filter: dropshadow(color=white, offx=0, offy=1);
+}
+
+/* Don't show shadows when selecting text */
+::-moz-selection { background: #5af; color: #fff; text-shadow: none; }
+::selection { background: #5af; color: #fff; text-shadow: none; }
+
+.cloudHeader {
+	float: right;
+	width: 232px;
+	text-align: center;
+}
+
+.boxheader .blurb p {
+	color:#517D8C;
+	float:right;
+	font-size: 1.15em;
+	line-height: 42px;
+	padding-left: 86px;
+	
+	/* HTML5 */
+	text-shadow:0 1px 0 #D5E8EF;
+	filter: dropshadow(color=#D5E8EF, offx=0, offy=1); 
+}
+
+.bubble {
+	line-height: 18px;
+	margin: 0;
+	padding: 15px 10px 5px 10px;
+}
+
+#maincontent {
+	background:	url(../images/main_footer.png) center bottom no-repeat,
+				url(../images/main_bg.jpg) left top repeat;
+	z-index: 0;
+}
+
+#maincontent h4 {
+	color: #785917;
+	font-weight:bold;
+	padding-bottom:8px;
+	
+	/* HTML5 */
+	text-shadow: 1px 1px 0 white;
+	filter: dropshadow(color=white, offx=1, offy=1);
+}
+
+#maincontent .sec_header, #colorbox .sec_header {
+	border-bottom: #dacf94 2px solid;
+}
+
+#maincontent
+.tweet .origination a {
+	color:#8c8c8c;
+	text-decoration:underline;
+}
+
+#maincontent
+.tweet .origination a:hover {
+	text-decoration:none;
+}
+
+#maincontent ul.wdn_tabs {
+	border-bottom:none;
+	bottom: 46px;
+    height: 0;
+	left: 12px;
+}
+
+#maincontent ul.wdn_tabs li.selected {
+	z-index: 100;
+	font-weight: bold;
+}
+
+#maincontent ul.wdn_tabs li {
+	font-family: Helvetica,Arial,sans-serif;
+	font-size:17px;
+	position: relative;
+	z-index: -1;
+}
+
+/*
+
+#maincontent ul.wdn_tabs li.last a {
+	padding: 0px 18px 0px 10px;
+}
+
+#maincontent ul.wdn_tabs li.last.selected a span {
+	margin-top:15px;
+}
+
+#maincontent
+.tweetBox .wdn_tabs_content {
+	margin-top:57px;
+}
+
+*/
+#right {
+	bottom: 17px;
+	float: right;
+	position:relative;
+	right:35px;	
+	width:278px;
+}
+
+#right .bubble p {
+	color:#594211;
+	font-size:11px;
+}
+
+#right .h4 {
+	margin-bottom:10px;
+}
+
+#maincontent
+ul.socialbuttons {
+	float:right;
+	list-style-type: none;
+	margin: 0;
+	margin-left: -14px;
+	padding: 6px 0 0 0;
+}
+
+ul.socialbuttons li {
+	display:inline;
+	float: left;
+	margin:0 19px;
+}
+
+#right .mini_container {
+	background-color: #f2eccb;
+	border:1px solid #CCC495;
+	margin-bottom: 1em;
+	margin-top:15px;
+	padding: 5px;
+	
+	/* HTML5 */
+	border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	
+	box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+	-khtml-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+}
+
+
+/* CSS3 Social Media Animation */
+
+
+/* Notice the Twitter button is reversed from Facebook and Youtube, there is a reason for this. */
+.socialbuttons li.twitter {
+	background: url('../images/social_sprites.png') no-repeat 0 -37px;
+	display:block;
+	height: 37px;
+	width: 54px;
+}
+
+.socialbuttons li.twitter a {
+	background: url('../images/social_sprites.png') no-repeat 0 0px;
+	display: block;
+	height: 37px;
+	text-indent: -9999px;
+	width: 54px;
+	
+	/* CSS3 */
+	transition: opacity .2s ease-in-out;
+	-webkit-transition: opacity .2s ease-in-out;
+	-moz-transition: opacity .2s ease-in-out;
+	-o-transition: opacity .2s ease-in-out;
+	-ms-transition: opacity .2s ease-in-out;
+}
+
+.socialbuttons li.twitter a:hover, 
+.socialbuttons li.twitter a:focus { 
+	opacity: 0; 
+}
+
+.socialbuttons li.facebook {
+	background: url('../images/social_sprites.png') no-repeat -54px 0;
+	display: block;
+	height: 37px;
+	width: 37px;
+}
+
+.socialbuttons li.facebook a {
+	background: url('../images/social_sprites.png') no-repeat -54px -37px;
+	display: block;
+	height: 37px;
+	opacity: 0;
+	text-indent: -9999px;
+	width: 37px;
+	
+	/* CSS3 */
+	transition: opacity .2s ease-in-out;
+	-webkit-transition: opacity .2s ease-in-out;
+	-moz-transition: opacity .2s ease-in-out;
+	-o-transition: opacity .2s ease-in-out;
+	-ms-transition: opacity .2s ease-in-out;
+}
+
+.socialbuttons li.facebook a:hover, 
+.socialbuttons li.facebook a:focus { 
+	opacity: 1; 
+}
+
+.socialbuttons li.youtube {
+	background: url('../images/social_sprites.png') no-repeat -92px 0;
+	display: block;
+	height: 37px;
+	width: 55px;
+}
+
+.socialbuttons li.youtube a {
+	background: url('../images/social_sprites.png') no-repeat -92px -37px;
+	display: block;
+	height: 37px;
+	opacity: 0;
+	text-indent: -9999px;
+	width: 55px;
+	
+	/* CSS3 */
+	transition: opacity .2s ease-in-out;
+	-webkit-transition: opacity .2s ease-in-out;
+	-moz-transition: opacity .2s ease-in-out;
+	-o-transition: opacity .2s ease-in-out;
+	-ms-transition: opacity .2s ease-in-out;
+}
+
+.socialbuttons li.youtube a:hover, 
+.socialbuttons li.youtube a:focus { 
+	opacity: 1; 
+}
+
+
+/* These are for index.php */
+
+.tweet {
+	background: rgb(247,247,247);
+	background: -moz-linear-gradient(top, rgba(247,247,247,1) 40%, rgba(235,235,235,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(247,247,247,1)), color-stop(100%,rgba(232,232,232,1)));
+	background: -webkit-linear-gradient(top, rgba(247,247,247,1) 40%,rgba(235,235,235,1) 100%);
+	background: -o-linear-gradient(top, rgba(247,247,247,1) 40%,rgba(235,235,235,1) 100%);
+	background: -ms-linear-gradient(top, rgba(247,247,247,1) 40%,rgba(235,235,235,1) 100%);
+	background: linear-gradient(top, rgba(247,247,247,1) 40%,rgba(235,235,235,1) 100%);
+	
+	border-bottom: 1px solid rgb(235, 235, 235);
+	border-left: 1px solid rgb(235, 235, 235);
+	border-top: 1px solid rgb(235, 235, 235);
+	left: -21px;
+	padding:5px;
+	position: relative;
+	width:539px;
+	z-index: 100;
+	
+	/* HTML5 */
+	border-radius: 4px 4px 0px 0px;
+	-khtml-border-radius: 4px 4px 0px 0px; 
+	-moz-border-radius: 4px 4px 0px 0px; 
+	-webkit-border-radius: 4px 4px 0px 0px;
+	
+	box-shadow: 0px 3px 7px rgba(0,0,0,0.35);
+	-moz-box-shadow: 0px 3px 7px rgba(0,0,0,0.35);
+  	-khtml-box-shadow: 0px 3px 7px rgba(0,0,0,0.35);
+  	-webkit-box-shadow: 0px 3px 7px rgba(0,0,0,0.35);
+	
+	/*
+	transition: box-shadow 0.3s ease-in-out, background 0.2s ease-in-out;
+	-moz-transition: box-shadow 0.3s ease-in-out, background 0.2s ease-in-out;
+	-o-transition: box-shadow 0.3s ease-in-out, background 0.2s ease-in-out;
+	-webkit-transition: box-shadow 0.3s ease-in-out, background 0.2s ease-in-out;
+	*/
+}
+
+/*
+.wdn_tabs_content
+.tweet:hover {
+	background-color:#fff;
+	
+	box-shadow: inset 0px 18px 20px -27px #c1c1c1, inset 0px -15px 20px -27px #c1c1c1;
+	-moz-box-shadow: inset 0px 18px 20px -27px #c1c1c1, inset 0px -15px 20px -27px #c1c1c1;
+	-webkit-box-shadow: inset 0px 18px 20px -27px #c1c1c1, inset 0px -15px 20px -27px #c1c1c1;	
+	
+}
+*/
+
+.tweet .avatar {
+	float:left;
+	padding-right:5px;
+}
+
+.tweet .origination {
+	color:#8c8c8c;
+	font-size:0.85em;
+	margin-left:53px;
+}
+
+.tweet .text {
+	font-size:1em;
+	margin-left: 53px;
+	color:#444;
+	
+	/* HTML5 */
+	text-shadow: 0px 1px 0px #fff;
+	/*filter: dropshadow(color=#fff, offx=0, offy=1);*/
+}
+
+.tweetContainer {
+	float: left;
+	left:70px;
+	margin-bottom:40px;
+	position:relative;
+	width:560px;
+}
+
+.tweetBox {
+	background-color:#fff;
+	border:1px solid #e6e6e6;
+	margin-top: -55px;
+	padding-top: 58px;
+	width:508px;
+	z-index: 90;
+	
+	/* HTML5 */
+	border-radius: 8px;
+	-khtml-border-radius: 8px; 
+	-moz-border-radius: 8px; 
+	-webkit-border-radius: 8px;
+	
+	box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+  	-khtml-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+  	-webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+}
+
+.wrap-l {
+	border-color: transparent #B4B4B4 transparent transparent;
+	border-style:solid;
+	border-width:20px;
+	height:0px;
+	width:0px;
+	position: relative;
+	left: -41px;
+	bottom: 20px;
+	z-index: -1; /* displayed under tweetBox */
+}
+
+.wrap-r {
+	border-color: transparent transparent transparent #B4B4B4;
+	border-style:solid;
+	border-width:20px;
+	height:0px;
+	width:0px;
+	position: relative;
+	left: 509px;
+	bottom: 60px;
+	z-index: -1; /* displayed under tweetBox */
+}
+
+
+/* These are for orgs.php */
+
+.tweet.friend {
+	border: none;
+	margin-left: 45px;
+	padding:10px 0px;
+	width:460px;
+	
+	
+	/* HTML5 */
+	border-radius: 0; 
+	-khtml-border-radius: 0;
+	-moz-border-radius: 0; 
+	-webkit-border-radius: 0;
+	
+	box-shadow: none;
+	-khtml-box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+.tweet.friend.row1 {
+	background:#f4f4f4;
+	border-bottom:1px solid #ddd;
+	border-top:1px solid #ddd;
+}
+
+.tweet.friend.row2 {
+	background:white;
+}
+
+.tweet.friend .avatar {
+	padding-left:10px;
+}
+
+.tweet.friend .text {
+	margin-left: 70px;
+	margin-right: 10px;
+}
+
+/* * * * * * * * * * * */
+
+
+.twitterTab {
+	background-color:#C40202;
+	border-bottom: 1px solid #9E0202;
+	border-left: 1px solid #9E0202;
+	border-top: 1px solid #9E0202;
+	height:40px;
+	padding:7px 5px;
+	position:absolute;
+	right:0;
+	top: 280px;
+	width: 420px;
+	
+	/* HTML5
+	background: -moz-linear-gradient(#f66, #C00 10%, #B70302);
+	background: -ms-linear-gradient(#f66, #C00 10%, #B70302);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f66),color-stop(.1, #C00),color-stop(1, #B70302));
+	*/
+	
+	border-radius: 9px 0 0 9px;
+	-moz-border-radius: 9px 0 0 9px;
+	-webkit-border-radius: 9px 0 0 9px;
+	
+	box-shadow: inset 0px -8px 12px -10px rgba(0, 0, 0, 0.8);
+	-webkit-box-shadow: inset 0px -8px 12px -10px rgba(0, 0, 0, 0.8);
+	-moz-box-shadow: inset 0px -8px 12px -10px rgba(0, 0, 0, 0.8);
+
+}
+
+#maincontent
+.twitterTab h3 {
+	color:#fff;
+	font-family: League-Gothic;
+	font-size:2.5em;
+	//font-weight:bold;
+	
+	/* HTML5 */
+	//text-shadow: 5px 5px 0px #C40202, 7px 7px 0px #fff;
+	//text-shadow: 1px 1px 0 white; /* #F2F0E4 */
+	//filter: dropshadow(color=white, offx=1, offy=1);
+	
+}

@@ -80,9 +80,9 @@ class Tweetgater_Twitter
 		$data = array();
     
 	    try {
-			$timeline = $twitter->status->friendsTimeline(array('page' => $page, 'count' => $resultsPerPage));		
+			$timeline = $twitter->statuses->homeTimeline(array('page' => $page, 'count' => $resultsPerPage));
 
-			foreach ($timeline as $t) {
+			foreach ($timeline->toValue() as $t) {
 				$data[] = array(
 					'id'                      => (string)$t->id,
 					'user-profile_image_url'  => (string)$t->user->profile_image_url,
@@ -169,7 +169,7 @@ class Tweetgater_Twitter
                 $data[] = array(
                     'id'                      => (string)$t['id'],
                     'user-profile_image_url'  => (string)$t['profile_image_url'],
-                    'user-name'               => (string)$t['from_user'],
+                    'user-name'               => (string)$t['from_user_name'],
                     'user-screen_name'        => (string)$t['from_user'],
                     'text'                    => $this->_processTweet((string)$t['text']),
                     'created_at'              => (string)$t['created_at'],
@@ -254,10 +254,12 @@ class Tweetgater_Twitter
         $accessToken->setTokenSecret($oauthConfig->oauth->tokenSecret);
         
         $config = array(
-            'siteUrl'         => 'http://twitter.com/oauth',
-            'consumerKey'     => $oauthConfig->oauth->consumerKey,
-            'consumerSecret'  => $oauthConfig->oauth->consumerSecret,
+            'siteUrl'         => 'https://twitter.com/oauth',
             'accessToken'     => $accessToken,
+            'oauthOptions' => array(
+              'consumerKey' => $oauthConfig->oauth->consumerKey,
+              'consumerSecret' => $oauthConfig->oauth->consumerSecret,
+            )
         );
                 
         return new Zend_Service_Twitter($config);

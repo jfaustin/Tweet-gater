@@ -8,7 +8,7 @@ $installUrl = Tweetgater_Twitter::getBaseUrl();
 
 $config = array(
     'callbackUrl'     => $installUrl . '/install/twitter_callback.php',
-    'siteUrl'         => 'http://twitter.com/oauth',
+    'siteUrl'         => 'https://twitter.com/oauth',
     'consumerKey'     => $oauthConfig->oauth->consumerKey,
     'consumerSecret'  => $oauthConfig->oauth->consumerSecret,
 );
